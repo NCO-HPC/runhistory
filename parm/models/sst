@@ -1,0 +1,5 @@
+whichpdys           PDYm2
+runjobs             jrunhistory_daily
+storetypes          perm
+dir                 $(compath.py nsst/nsst_ver/nsst).%thepdy%
+dotransfer

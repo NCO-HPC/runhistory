@@ -1,0 +1,89 @@
+dir             $(compath.py hrrr/hrrr_ver/hrrr).%thepdy%/conus
+
+###
+whichpdys       PDYm1
+runjobs         jrunhistory00
+logarg2          %thepdy%00
+#
+storetypes      perm
+files           ./*{t00z,t01z,t02z,t03z,t04z,t05z}*{wrfnatf00,wrfnatf01,wrfnatf02,wrfnatf03,wrfnatf04,wrfnatf05,wrfnatf06}*
+tarmod          00-05.wrfnatdng
+dotransfer
+#
+files           ./*{t00z,t01z,t02z,t03z,t04z,t05z}*{wrfprs,subh}*
+tarmod          00-05.wrf
+dotransfer
+#
+files           ./*{t00z,t01z,t02z,t03z,t04z,t05z}*class1.bufr*
+tarmod          00-05.bufr
+dotransfer
+#
+storetypes      1yr
+files           ./*{t00z,t01z,t02z,t03z,t04z,t05z}*{wrfguess_rap,wrfbdy,wrf_inout,NASA,RefInGSI}*
+tarmod          00-05.init
+dotransfer
+###
+runjobs         jrunhistory06
+logarg2          %thepdy%06
+#
+storetypes      perm
+files           ./*{t06z,t07z,t08z,t09z,t10z,t11z}*{wrfnatf00,wrfnatf01,wrfnatf02,wrfnatf03,wrfnatf04,wrfnatf05,wrfnatf06}*
+tarmod          06-11.wrfnatdng
+dotransfer
+#
+files           ./*{t06z,t07z,t08z,t09z,t10z,t11z}*{wrfprs,subh}*
+tarmod          06-11.wrf
+dotransfer
+#
+files           ./*{t06z,t07z,t08z,t09z,t10z,t11z}*class1.bufr*
+tarmod          06-11.bufr
+dotransfer
+#
+storetypes      1yr
+files           ./*{t06z,t07z,t08z,t09z,t10z,t11z}*{wrfguess_rap,wrfbdy,wrf_inout,NASA,RefInGSI}*
+tarmod          06-11.init
+dotransfer
+###
+runjobs         jrunhistory12
+logarg2          %thepdy%12
+#
+storetypes      perm
+files           ./*{t12z,t13z,t14z,t15z,t16z,t17z}*{wrfnatf00,wrfnatf01,wrfnatf02,wrfnatf03,wrfnatf04,wrfnatf05,wrfnatf06}*
+tarmod          12-17.wrfnatdng
+dotransfer
+#
+files           ./*{t12z,t13z,t14z,t15z,t16z,t17z}*{wrfprs,subh}*
+tarmod          12-17.wrf
+dotransfer
+#
+files           ./*{t12z,t13z,t14z,t15z,t16z,t17z}*class1.bufr*
+tarmod          12-17.bufr
+dotransfer
+#
+storetypes      1yr
+files           ./*{t12z,t13z,t14z,t15z,t16z,t17z}*{wrfguess_rap,wrfbdy,wrf_inout,NASA,RefInGSI}*
+tarmod          12-17.init
+dotransfer
+###
+whichpdys       PDYm2
+runjobs         jrunhistory18
+logarg2          %thepdy%18
+#
+storetypes      perm
+files           ./*{t18z,t19z,t20z,t21z,t22z,t23z}*{wrfnatf00,wrfnatf01,wrfnatf02,wrfnatf03,wrfnatf04,wrfnatf05,wrfnatf06}*
+tarmod          18-23.wrfnatdng
+dotransfer
+#
+files           ./*{t18z,t19z,t20z,t21z,t22z,t23z}*{wrfprs,subh}*
+tarmod          18-23.wrf
+dotransfer
+#
+files           ./*{t18z,t19z,t20z,t21z,t22z,t23z}*class1.bufr*
+tarmod          18-23.bufr
+dotransfer
+#
+storetypes      1yr
+files           ./*{t18z,t19z,t20z,t21z,t22z,t23z}*{wrfguess_rap,wrfbdy,wrf_inout,NASA,RefInGSI}*
+tarmod          18-23.init
+dotransfer
+###

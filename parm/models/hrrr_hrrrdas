@@ -1,0 +1,57 @@
+dir             $(compath.py hrrr/hrrr_ver/hrrr).%thepdy%/hrrrdas
+
+###
+whichpdys       PDYm1
+runjobs         jrunhistory00
+logarg2          %thepdy%00
+#
+storetypes      1yr
+files           ./*{t00z,t01z,t02z,t03z,t04z,t05z}*analysis_d0?.mean
+tarmod          00-05.hrrrdas.analysis.mean
+dotransfer
+#
+files           ./*{diag_conv_ges,diag_radardbz_ges}*{%thepdy%00,%thepdy%01,%thepdy%02,%thepdy%03,%thepdy%04,%thepdy%05}*
+tarmod          00-05.hrrrdas.gsi.diag
+dotransfer
+#
+###
+runjobs         jrunhistory06
+logarg2          %thepdy%06
+#
+storetypes      1yr
+files           ./*{t06z,t07z,t08z,t09z,t10z,t11z}*analysis_d0?.mean
+tarmod          06-11.hrrrdas.analysis.mean
+dotransfer
+#
+files           ./*{diag_conv_ges,diag_radardbz_ges}*{%thepdy%06,%thepdy%07,%thepdy%08,%thepdy%09,%thepdy%10,%thepdy%11}*
+tarmod          06-11.hrrrdas.gsi.diag
+dotransfer
+#
+###
+runjobs         jrunhistory12
+logarg2          %thepdy%12
+#
+storetypes      1yr
+files           ./*{t12z,t13z,t14z,t15z,t16z,t17z}*analysis_d0?.mean
+tarmod          12-17.hrrrdas.analysis.mean
+dotransfer
+#
+files           ./*{diag_conv_ges,diag_radardbz_ges}*{%thepdy%12,%thepdy%13,%thepdy%14,%thepdy%15,%thepdy%16,%thepdy%17}*
+tarmod          12-17.hrrrdas.gsi.diag
+dotransfer
+#
+###
+whichpdys       PDYm2
+runjobs         jrunhistory18
+logarg2          %thepdy%18
+#
+storetypes      1yr
+files           ./*{t18z,t19z,t20z,t21z,t22z,t23z}*analysis_d0?.mean
+tarmod          18-23.hrrrdas.analysis.mean
+dotransfer
+#
+files           ./*{diag_conv_ges,diag_radardbz_ges}*{%thepdy%18,%thepdy%19,%thepdy%20,%thepdy%21,%thepdy%22,%thepdy%23}*
+tarmod          18-23.hrrrdas.gsi.diag
+dotransfer
+#
+###

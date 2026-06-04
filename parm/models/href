@@ -1,0 +1,10 @@
+runjobs         jrunhistory%modelcyc%
+whichpdys       PDYm1
+modelcycs       00,06,12,18
+dir             $(compath.py href/href_ver/href).%thepdy%/ensprod
+
+storetypes      2yr
+files           ./href.t%modelcyc%z.{conus,ak,pr,hi}.{mean,eas,avrg,prob,pmmn,lpmm,ffri}.f{[0-2][0-9],30,31,32,33,36,39,42,45,48}.grib2
+tarmod          %modelcyc%
+dotransfer
+

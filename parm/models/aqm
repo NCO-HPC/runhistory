@@ -1,0 +1,88 @@
+whichpdys           PDYm2
+storetypes          5yr
+modelcycs           00,06,12,18
+runjobs             jrunhistory%modelcyc%
+dir                 $(compath.py aqm/aqm_ver/aqm).%thepdy%/%modelcyc%
+
+files               ./aqm.t%modelcyc%z.aqm.prod.nc
+tarmod              %modelcyc%.output
+dotransfer
+
+files               ./aqm.*t%modelcyc%z.{chem_sfc,met_sfc}.f???.nc
+morefiles           ./aqm.*t%modelcyc%z.*793.grib2
+morefiles           ./aqm.t%modelcyc%z.aod.f???.nc
+morefiles           ./{pm2.5,ozone}.corrected.%thepdy%.%modelcyc%z.nc
+tarmod              %modelcyc%.post
+dotransfer
+
+modelcycs           00,18
+runjobs             jrunhistory%modelcyc%
+files               ./aqm.*t%modelcyc%z.*{196,198,227}*.grib2
+tarmod              %modelcyc%.product
+dotransfer
+
+modelcycs           06,12
+runjobs             jrunhistory%modelcyc%
+files               ./aqm.*t%modelcyc%z.*{196,198,227}*.grib2
+morefiles           ./wmo/* 
+dotransfer
+
+modelcycs           00
+runjobs             jrunhistory00
+dir                 $(compath.py aqm/aqm_ver/aqm).%thepdy%/00
+files               ./aqm.t%modelcyc%z.gfs_data.tile7.halo0.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_bndy.tile7.f???.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_ctrl.nc
+morefiles           ./aqm.t%modelcyc%z.sfc_data.tile7.halo0.nc
+morefiles           ./RESTART/%thepdy%.060000.*
+morefiles           ./aqm.t%modelcyc%z.NEXUS_Expt.nc
+morefiles           ./aqm.t%modelcyc%z.PT.nc
+morefiles           ./FIRE_EMISSION/Hourly_Emissions_regrid_NA_13km_*.nc
+morefiles           ./aqm.t%modelcyc%z.{dyn,phy}.f*.nc
+tarmod              00.input
+dotransfer
+
+modelcycs           06
+runjobs             jrunhistory06
+dir                 $(compath.py aqm/aqm_ver/aqm).%thepdy%/06
+files               ./aqm.t%modelcyc%z.gfs_data.tile7.halo0.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_bndy.tile7.f???.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_ctrl.nc
+morefiles           ./aqm.t%modelcyc%z.sfc_data.tile7.halo0.nc
+morefiles           ./RESTART/%thepdy%.120000.*
+morefiles           ./aqm.t%modelcyc%z.NEXUS_Expt.nc
+morefiles           ./aqm.t%modelcyc%z.PT.nc
+morefiles           ./FIRE_EMISSION/Hourly_Emissions_regrid_NA_13km_*.nc
+morefiles           ./aqm.t%modelcyc%z.{dyn,phy}.f*.nc
+tarmod              06.input
+dotransfer
+
+modelcycs           12
+runjobs             jrunhistory12
+dir                 $(compath.py aqm/aqm_ver/aqm).%thepdy%/12
+files               ./aqm.t%modelcyc%z.gfs_data.tile7.halo0.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_bndy.tile7.f???.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_ctrl.nc
+morefiles           ./aqm.t%modelcyc%z.sfc_data.tile7.halo0.nc
+morefiles           ./RESTART/%thepdy%.180000.*
+morefiles           ./aqm.t%modelcyc%z.NEXUS_Expt.nc
+morefiles           ./aqm.t%modelcyc%z.PT.nc
+morefiles           ./FIRE_EMISSION/Hourly_Emissions_regrid_NA_13km_*.nc
+morefiles           ./aqm.t%modelcyc%z.{dyn,phy}.f*.nc
+tarmod              12.input
+dotransfer
+
+modelcycs           18
+runjobs             jrunhistory18
+dir                 $(compath.py aqm/aqm_ver/aqm).%thepdy%/18
+files               ./aqm.t%modelcyc%z.gfs_data.tile7.halo0.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_bndy.tile7.f???.nc
+morefiles           ./aqm.t%modelcyc%z.gfs_ctrl.nc
+morefiles           ./aqm.t%modelcyc%z.sfc_data.tile7.halo0.nc
+morefiles           ./RESTART/%thepdyp1%.000000.*
+morefiles           ./aqm.t%modelcyc%z.NEXUS_Expt.nc
+morefiles           ./aqm.t%modelcyc%z.PT.nc
+morefiles           ./FIRE_EMISSION/Hourly_Emissions_regrid_NA_13km_*.nc
+morefiles           ./aqm.t%modelcyc%z.{dyn,phy}.f*.nc
+tarmod              18.input
+dotransfer

@@ -1,0 +1,34 @@
+modelcycs       00,06,12,18
+dir             $(compath.py wfs/wfs_ver/wdas).%thepdy%/%modelcyc%
+########
+runjobs         jrunhistory_daily
+logarg2         %thepdy%%modelcyc%
+whichpdys       PDYm2
+#
+storetypes      5yr
+
+modelcycs       00
+files           ./*t%modelcyc%z.{abias*,radstat,atmanl,atmf00,atmf03,atmf06,sfca03,sfcf00,sfcf03,sfcf06,input_parameters.nc}
+morefiles       ./*t%modelcyc%z.IPE_State.apex.{%thepdym1%21,%thepdy%00,%thepdy%03,%thepdy%06}00.h5
+#tarmod          %modelcyc%
+dotransfer
+
+modelcycs       06
+files           ./*.{abias*,radstat,atmanl,atmf00,atmf03,atmf06,sfca03,sfcf00,sfcf03,sfcf06,input_parameters.nc}
+morefiles       ./*.IPE_State.apex.{%thepdy%03,%thepdy%06,%thepdy%09,%thepdy%12}00.h5
+#tarmod          %modelcyc%
+dotransfer
+
+modelcycs       12
+files           ./*.{abias*,radstat,atmanl,atmf00,atmf03,atmf06,sfca03,sfcf00,sfcf03,sfcf06,input_parameters.nc}
+morefiles       ./*.IPE_State.apex.{%thepdy%09,%thepdy%12,%thepdy%15,%thepdy%18}00.h5
+#tarmod          %modelcyc%
+dotransfer
+
+modelcycs       18
+files           ./*.{abias*,radstat,atmanl,atmf00,atmf03,atmf06,sfca03,sfcf00,sfcf03,sfcf06,input_parameters.nc}
+morefiles       ./*.IPE_State.apex.{%thepdy%15,%thepdy%18,%thepdy%21,%thepdyp1%00}00.h5
+#tarmod          %modelcyc%
+dotransfer
+
+

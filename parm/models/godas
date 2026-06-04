@@ -1,0 +1,5 @@
+whichpdys           PDYm2
+runjobs             jrunhistory_daily
+dir                 $(compath.py godas/godas_ver/godas).%thepdy%
+storetypes          perm
+dotransfer

@@ -1,0 +1,24 @@
+whichpdys           PDYm1
+modelcycs           00
+runjobs             jrunhistory%modelcyc%
+dir                 $(compath.py transfers/transfer_ver)/4GB
+
+storetypes          1yr
+files               ./*t%modelcyc%z*
+tarmod              %modelcyc%_canned_test_1yr
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*
+tarmod              %modelcyc%._canned_test_2yr
+dotransfer
+
+storetypes          5yr
+files               ./*t%modelcyc%z*
+tarmod              %modelcyc%._canned_test_5yr
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*
+tarmod              %modelcyc%._canned_test_perm
+dotransfer

@@ -1,0 +1,62 @@
+#PBS -N hpss_cleanup_%TIME%
+#PBS -S /bin/bash
+#PBS -j oe
+#PBS -A %PROJ%-%PROJENVIR%
+#PBS -q %QUEUE%
+#PBS -l walltime=05:00:00
+#PBS -l select=1:ncpus=1:mem=%MEM:30GB%
+#PBS -l debug=true
+
+export model=runhistory
+%include <head.h>
+%include <envir-p1.h>
+
+export cyc=%CYC%
+
+export RSYNC_MAXTIME=%RSYNC_MAXTIME:30%
+export LOG_DAYS_KEEP=%LOG_DAYS_KEEP:5%
+export WRITE_LOG_DIR=%WRITE_LOG_DIR:YES%
+export RSYNC_LOG_DIR=%RSYNC_LOG_DIR:YES%
+export READ_LOG_DIR=%READ_LOG_DIR:YES%
+export CHECK_HPSS_IDX=%CHECK_HPSS_IDX:YES%
+export DRY_RUN_ONLY=%DRY_RUN_ONLY:NO%
+
+$HOMErunhistory/jobs/JHPSS_CLEANUP
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort
+  exit
+fi
+
+%include <tail.h>
+%manual
+################################################################################
+TASKSCRIPT DOCUMENTATION BLOCK
+
+TASKSCRIPT:     jhpss_cleanup
+LAST MODIFIER:  Gregory Mott (Gregory.Mott@noaa.gov)
+DATE:           Jun 2022
+
+FULL NAME:    /prod/primary/cron/runhistory/v?.?/jhpss_cleanup
+TRIGGERED BY: time trigger
+TRIGGERS:     cron 23:40
+
+PURPOSE:  To execute the job to cleanup HPSS data on the 1st day of each month
+
+JOB SCRIPT CALLED: .../packages/runhistory.v?.?.?/jobs/JHPSS_CLEANUP ==>
+                   .../packages/runhistory.v?.?.?/scripts/exhpss_cleanup.sh.ecf
+
+JOB SPECIFIC VARIABLES WITH DEFAULT VALUES (can be changed through ecFlow):
+
+RSYNC_MAXTIME=30 # timeout for rsync in seconds                                                                                                                             
+LOG_DAYS_KEEP=5 # $LOGrhist entries older than this are deleted at the beginning of every run                                                                                     
+WRITE_LOG_DIR=YES # YES: create a log entry in $LOGrhist for each successful ush/rhist_save* run                                                                            
+RSYNC_LOG_DIR=YES # YES: synchronize $LOGrhist (with the superset of all files) between Gyre and Tide at the beginning of every run                                               
+READ_LOG_DIR=YES # YES: use $LOGrhist to decide if archiving should be skipped                                                                                               
+CHECK_HPSS_IDX=YES # YES: check *.idx files on HPSS (file present: archiving is skipped)                                                                                   
+DRY_RUN_ONLY=NO # YES: do not write to the archive (useful for checking the script logic and the list of archived files)                                                     
+                #      but do clean/synchronize $LOGrhist                                                                                                                    
+                # use with READ_LOG_DIR=NO and CHECK_HPSS_IDX=NO to get full info even if archiving done before                                                              
+
+#################################################################################
+%end

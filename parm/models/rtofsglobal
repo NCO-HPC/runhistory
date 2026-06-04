@@ -1,0 +1,34 @@
+runjobs         jrunhistory_rtofs
+whichpdys       PDYm1
+dir             $(compath.py rtofs/rtofs_ver/rtofs).%thepdy%
+
+storetypes      perm
+files           ./rtofs_glo.t00z.{n00,n-06,n-24}.restart*{b,a.tgz,cice.tgz}
+tarmod          .restart
+dotransfer
+
+storetypes      1yr
+files           ./*grb2*
+tarmod          .grb2
+dotransfer
+
+storetypes      5yr
+files           ./rtofs_glo.t00z.{{f06,f{12..192..6},n00,n-{06..24..6}}.archv.{a.tgz,b},{f0{1..9..1},f{10..192..1},n00,n-{01..24..1}}.archs.{a.tgz,b},{f0{0..9..1},f{10..192..1},n00,n-{01..24..1}}.arche.{a.tgz,b}}
+tarmod          .ab
+dotransfer
+
+storetypes      5yr
+files           ./{ncoda/ocnqc/*,./ncoda/logs/*}
+tarmod          .ncoda
+dotransfer
+
+storetypes      5yr
+files           ./{ncoda/glbl_var/*,./ncoda/nhem_var/*,./ncoda/shem_var/*,./ncoda/hycom_var/restart/*${PDYm2}*,./ncoda/hycom_var/restart/*${PDYm3}*}
+tarmod          .ncodavar
+dotransfer
+
+storetypes      1yr
+storetypes      1yr
+files           ./{*.nc,./*archv_1_inc*,./*incupd*,./*.nc.gz}
+tarmod          .nc
+dotransfer

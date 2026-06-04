@@ -1,0 +1,10 @@
+whichpdys           PDYm2
+runjobs             jrunhistory_daily
+dir                 $(compath.py hysplit/hysplit_ver/hysplit).%thepdy%
+excludefiles        ./hysplit.t00z.{gefs,rens}*
+moreexcludefiles    ./hysplit.t06z.{gefs,rens}*
+moreexcludefiles    ./hysplit.t12z.{gefs,rens}*
+moreexcludefiles    ./hysplit.t18z.{gefs,rens}*
+storetypes          perm
+files               ./
+dotransfer

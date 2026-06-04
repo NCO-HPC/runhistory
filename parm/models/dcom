@@ -1,0 +1,2 @@
+shell         cp -vn /lfs/h1/ops/prod/dcom/quips /lfs/h1/ops/${envir}/dcom/$PDYm1/.
+shell         cp -vn /lfs/h1/ops/prod/dcom/sdmedit /lfs/h1/ops/${envir}/dcom/$PDYm1/.

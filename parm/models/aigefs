@@ -1,0 +1,44 @@
+runjobs     jrunhistory%modelcyc%
+whichpdys   PDYm2
+dir         $(compath.py aigefs/aigefs_ver/aigefs).%thepdy%/%modelcyc%/
+###
+modelcycs   00,06,12,18
+#
+storetypes  2yr
+files       ./mem000/model/atmos/*/*
+morefiles   ./mem001/model/atmos/*/*
+morefiles   ./mem002/model/atmos/*/*
+morefiles   ./mem003/model/atmos/*/*
+morefiles   ./mem004/model/atmos/*/*
+morefiles   ./mem005/model/atmos/*/*
+morefiles   ./mem006/model/atmos/*/*
+morefiles   ./mem007/model/atmos/*/*
+morefiles   ./mem008/model/atmos/*/*
+morefiles   ./mem009/model/atmos/*/*
+morefiles   ./mem010/model/atmos/*/*
+morefiles   ./mem011/model/atmos/*/*
+morefiles   ./mem012/model/atmos/*/*
+morefiles   ./mem013/model/atmos/*/*
+morefiles   ./mem014/model/atmos/*/*
+morefiles   ./mem015/model/atmos/*/*
+morefiles   ./mem016/model/atmos/*/*
+morefiles   ./mem017/model/atmos/*/*
+morefiles   ./mem018/model/atmos/*/*
+morefiles   ./mem019/model/atmos/*/*
+morefiles   ./mem020/model/atmos/*/*
+morefiles   ./mem021/model/atmos/*/*
+morefiles   ./mem022/model/atmos/*/*
+morefiles   ./mem023/model/atmos/*/*
+morefiles   ./mem024/model/atmos/*/*
+morefiles   ./mem025/model/atmos/*/*
+morefiles   ./mem026/model/atmos/*/*
+morefiles   ./mem027/model/atmos/*/*
+morefiles   ./mem028/model/atmos/*/*
+morefiles   ./mem029/model/atmos/*/*
+morefiles   ./mem030/model/atmos/*/*
+tarmod      .model_atmos
+dotransfer
+#
+files       ./ensstat/products/atmos/grib2/* # is explicit subdir structure necessary?
+tarmod      .ensstat_atmos
+dotransfer

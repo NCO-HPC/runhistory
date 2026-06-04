@@ -1,0 +1,12 @@
+modelcycs       00,06,12,18
+dir             $(compath.py wfs/wfs_ver/wfs).%thepdy%/%modelcyc%
+#
+runjobs         jrunhistory_daily
+logarg2         %thepdy%%modelcyc%
+whichpdys       PDYm2
+storetypes      5yr
+#
+files           ./*.{abias*,atmanl,atmf00,sfca03,sfcf00}
+morefiles       ./*.nc
+dotransfer
+

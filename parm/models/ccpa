@@ -1,0 +1,5 @@
+whichpdys       PDYm10
+runjobs         jrunhistory_daily
+dir             $(compath.py ccpa/ccpa_ver/ccpa).%thepdy%
+storetypes      perm
+dotransfer

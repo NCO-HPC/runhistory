@@ -1,0 +1,10 @@
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.gsistat                          
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.cnvstat                          
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.abias*                           
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.jtwc-fnoc.tcvitals.tm00          
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.oznstat                        
+./gdas.%thepdy%/%modelcyc%/atmos/*gif                                    
+./gdas.%thepdy%/%modelcyc%/atmos/minmon                                  
+./gdas.%thepdy%/%modelcyc%/atmos/radmon                                  
+./gdas.%thepdy%/%modelcyc%/atmos/oznmon                                  
+./gdas.%thepdy%/%modelcyc%/atmos/timetwin.diags*                         

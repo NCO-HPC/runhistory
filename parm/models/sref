@@ -1,0 +1,147 @@
+whichpdys           PDYm4
+storetypes          perm
+logarg1             $(compath.py sref/sref_ver/sref).%thepdy%
+###
+runjobs             jrunhistory00
+logarg2              %thepdy%03
+dir                 $(compath.py sref/sref_ver/sref).%thepdy%/03
+
+files               ./bufr/*
+tarmod              .bufr
+dotransfer
+files               ./ensprod/*
+tarmod              .ensprod
+dotransfer
+files               ./ensprod_biasc/*
+tarmod              .ensprod_biasc
+dotransfer
+files               ./ensprod_ndgd/*
+tarmod              .ensprod_ndgd
+dotransfer
+files               ./pgrb/*
+excludefiles        ./pgrb/*pgrb132*
+tarmod              .pgrb
+dotransfer
+files               ./pgrb_biasc/*
+tarmod              .pgrb_biasc
+dotransfer
+files               ./pgrb_ndgd/*
+tarmod              .pgrb_ndgd
+dotransfer
+files               ./cluster_NCEP/*
+tarmod              .cluster_NCEP
+dotransfer
+files               ./cluster_OU/*
+tarmod              .cluster_OU
+dotransfer
+files               ./misc/*
+tarmod              .misc
+dotransfer
+###
+runjobs             jrunhistory06
+logarg2              %thepdy%09
+dir                 $(compath.py sref/sref_ver/sref).%thepdy%/09
+
+files               ./bufr/*
+tarmod              .bufr
+dotransfer
+files               ./ensprod/*
+tarmod              .ensprod
+dotransfer
+files               ./ensprod_biasc/*
+tarmod              .ensprod_biasc
+dotransfer
+files               ./ensprod_ndgd/*
+tarmod              .ensprod_ndgd
+dotransfer
+files               ./pgrb/*
+excludefiles        ./pgrb/*pgrb132*
+tarmod              .pgrb
+dotransfer
+files               ./pgrb_biasc/*
+tarmod              .pgrb_biasc
+dotransfer
+files               ./pgrb_ndgd/*
+tarmod              .pgrb_ndgd
+dotransfer
+files               ./cluster_NCEP/*
+tarmod              .cluster_NCEP
+dotransfer
+files               ./cluster_OU/*
+tarmod              .cluster_OU
+dotransfer
+files               ./misc/*
+tarmod              .misc
+dotransfer
+###
+runjobs             jrunhistory12
+logarg2              %thepdy%15
+dir                 $(compath.py sref/sref_ver/sref).%thepdy%/15
+
+files               ./bufr/*
+tarmod              .bufr
+dotransfer
+files               ./ensprod/*
+tarmod              .ensprod
+dotransfer
+files               ./ensprod_biasc/*
+tarmod              .ensprod_biasc
+dotransfer
+files               ./ensprod_ndgd/*
+tarmod              .ensprod_ndgd
+dotransfer
+files               ./pgrb/*
+excludefiles        ./pgrb/*pgrb132*
+tarmod              .pgrb
+dotransfer
+files               ./pgrb_biasc/*
+tarmod              .pgrb_biasc
+dotransfer
+files               ./pgrb_ndgd/*
+tarmod              .pgrb_ndgd
+dotransfer
+files               ./cluster_NCEP/*
+tarmod              .cluster_NCEP
+dotransfer
+files               ./cluster_OU/*
+tarmod              .cluster_OU
+dotransfer
+files               ./misc/*
+tarmod              .misc
+dotransfer
+###
+runjobs             jrunhistory18
+logarg2              %thepdy%21
+dir                 $(compath.py sref/sref_ver/sref).%thepdy%/21
+
+files               ./bufr/*
+tarmod              .bufr
+dotransfer
+files               ./ensprod/*
+tarmod              .ensprod
+dotransfer
+files               ./ensprod_biasc/*
+tarmod              .ensprod_biasc
+dotransfer
+files               ./ensprod_ndgd/*
+tarmod              .ensprod_ndgd
+dotransfer
+files               ./pgrb/*
+excludefiles        ./pgrb/*pgrb132*
+tarmod              .pgrb
+dotransfer
+files               ./pgrb_biasc/*
+tarmod              .pgrb_biasc
+dotransfer
+files               ./pgrb_ndgd/*
+tarmod              .pgrb_ndgd
+dotransfer
+files               ./cluster_NCEP/*
+tarmod              .cluster_NCEP
+dotransfer
+files               ./cluster_OU/*
+tarmod              .cluster_OU
+dotransfer
+files               ./misc/*
+tarmod              .misc
+dotransfer

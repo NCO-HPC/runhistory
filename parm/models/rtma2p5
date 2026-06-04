@@ -1,0 +1,67 @@
+whichpdys           PDYm1
+dir                 $(compath.py rtma/rtma_ver/rtma2p5).%thepdy%
+###
+runjobs             jrunhistory00
+logarg2              %thepdy%00
+tarmod              00-05
+#
+storetypes          perm
+files               ./rtma2p5.t{00,01,02,03,04,05}z*grb2_wexp
+morefiles           ./rtma.t{00,01,02,03,04,05}z*grb2
+morefiles           ./rtma2p5.t{00,01,02,03,04,05}z*{diag_conv,rejectlist,smart,gsiparm,parmcard_input,gridname_input,rerun_info.txt,hwrfinfo_input,hgridoptions_input,rmuse,FAA_T_stn_analysis}*
+excludefiles        ./*bufr_d.listing*
+moreexcludefiles    ./rtma2p5.t{00,01,02,03,04,05}z.stheoryflds_plus1h_ndfd.grb2_wexp
+dotransfer
+#
+storetypes          2yr
+files               ./rtma2p5.t{00,01,02,03,04,05}z*{listing_iter,fits,penalty,cverrorupdate,allcv_groups,biascor_in.dat}*
+dotransfer
+###
+runjobs             jrunhistory06
+logarg2              %thepdy%06
+tarmod              06-11
+#
+storetypes          perm
+files               ./rtma2p5.t{06,07,08,09,10,11}z*grb2_wexp
+morefiles           ./rtma.t{06,07,08,09,10,11}z*grb2
+morefiles           ./rtma2p5.t{06,07,08,09,10,11}z*{diag_conv,rejectlist,smart,gsiparm,parmcard_input,gridname_input,rerun_info.txt,hwrfinfo_input,hgridoptions_input,rmuse,FAA_T_stn_analysis}*
+excludefiles        ./*bufr_d.listing*
+moreexcludefiles    ./rtma2p5.t{06,07,08,09,10,11}z.stheoryflds_plus1h_ndfd.grb2_wexp
+dotransfer
+#
+storetypes          2yr
+files               ./rtma2p5.t{06,07,08,09,10,11}z*{listing_iter,fits,penalty,cverrorupdate,allcv_groups,biascor_in.dat}*
+dotransfer
+###
+runjobs             jrunhistory12
+logarg2              %thepdy%12
+tarmod              12-17
+#
+storetypes          perm
+files               ./rtma2p5.t{12,13,14,15,16,17}z*grb2_wexp
+morefiles           ./rtma.t{12,13,14,15,16,17}z*grb2
+morefiles           ./rtma2p5.t{12,13,14,15,16,17}z*{diag_conv,rejectlist,smart,gsiparm,parmcard_input,gridname_input,rerun_info.txt,hwrfinfo_input,hgridoptions_input,rmuse,FAA_T_stn_analysis}*
+excludefiles        ./*bufr_d.listing*
+moreexcludefiles    ./rtma2p5.t{12,13,14,15,16,17}z.stheoryflds_plus1h_ndfd.grb2_wexp
+dotransfer
+#
+storetypes          2yr
+files               ./rtma2p5.t{12,13,14,15,16,17}z*{listing_iter,fits,penalty,cverrorupdate,allcv_groups,biascor_in.dat}*
+dotransfer
+###
+whichpdys           PDYm2
+runjobs             jrunhistory18
+logarg2              %thepdy%18
+tarmod              18-23
+#
+storetypes          perm
+files               ./rtma2p5.t{18,19,20,21,22,23}z*grb2_wexp
+morefiles           ./rtma.t{18,19,20,21,22,23}z*grb2
+morefiles           ./rtma2p5.t{18,19,20,21,22,23}z*{diag_conv,rejectlist,smart,gsiparm,parmcard_input,gridname_input,rerun_info.txt,hwrfinfo_input,hgridoptions_input,rmuse,FAA_T_stn_analysis}*
+excludefiles        ./*bufr_d.listing*
+moreexcludefiles    ./rtma2p5.t{18,19,20,21,22,23}z.stheoryflds_plus1h_ndfd.grb2_wexp
+dotransfer
+#
+storetypes          2yr
+files               ./rtma2p5.t{18,19,20,21,22,23}z*{listing_iter,fits,penalty,cverrorupdate,allcv_groups,biascor_in.dat}*
+dotransfer

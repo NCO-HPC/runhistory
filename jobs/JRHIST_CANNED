@@ -1,0 +1,117 @@
+#!/bin/sh
+
+export PS4=' $SECONDS + '
+date
+set -x
+
+export DATA=${DATA:-${DATAROOT:?}/${jobid:?}}
+mkdir $DATA
+cd $DATA
+
+export SENDECF=YES
+export NET=runhistory
+export RUN=runhistory
+
+if [ ${envir} = "prod" ]
+then
+    export HPSSOUT=${HPSSOUT:-/NCEPPROD/hpssprod/runhistory}
+    export HPSSOUT_OBS=${HPSSOUT_OBS:-/NCEPOBSERV/hpssprod/runhistory}
+else
+    export HPSSOUT=${HPSSOUT:-/NCEPPROD/hpsspara/runhistory/ops.para}
+    export HPSSOUT_OBS=${HPSSOUT_OBS:-/NCEPOBSERV/hpsspara/runhistory/ops.para}
+fi
+
+# Set TMPDIR, which is needed by htar
+export TMPDIR=$DATA
+
+#export CYC=$cyc
+export cycle=t${cyc}z
+export CYCLE=T${cyc}Z
+
+setpdy.sh 10
+. ./PDY
+
+export outid="LL$job"
+export pgmout="OUTPUT.${pid}"
+
+ecfID=$(echo ${PBS_JOBID} | awk -F"." '{print $1}')
+export OUTPUTFILE=${PBS_OUTPUTFILE:-${PBS_O_WORKDIR}/${PBS_JOBNAME}.o${ecfID}}
+export stdout_file=$(readlink -m $OUTPUTFILE)
+
+export USHrunhistory=${USHrunhistory:-$HOMErunhistory/ush}
+export PARMrunhistory=${PARMrunhistory:-$HOMErunhistory/parm}
+export LOGrunhistory=${LOGrunhistory:-$(compath.py -v ${envir}/${NET}/${runhistory_ver})/${RUN}}
+mkdir -p $LOGrunhistory
+
+
+export COMDIR=${COMDIR:-`compath.py runhistory/${runhistory_ver}`/${CANSIZE:-10GB}}
+export LOGDIR=${COMROOT:?}/logs/network_monitor/${SITE}/${PDY}
+mkdir -p $LOGDIR
+export logfile=transfer_hpss_canned_rate.log
+export COMOUT=$LOGDIR/$logfile
+
+env
+
+#export transfers_ver=$(get2dver.py transfers)  ### comment out and no need anymore
+
+rate_label_log=$DATA/rate_label_log
+export today=`date +%Y%m%d`
+export StartTime=`date +%H:%M:%S`
+t1=$SECONDS
+export from="${HOSTNAME}/"`grep ${HOSTNAME} /etc/hosts|head -1|awk '{print $1}'`
+echo "$from $StartTime ${SITE} to hpss " > $rate_label_log
+ecflow_client --label info "`cat $rate_label_log `"
+
+RSYNC_MAX_ATTEMPTS=5
+hpss_success=false
+hpss_attempts=0
+while [ $hpss_success = "false" ]; do
+#############################################################
+  ${USHrunhistory}/rhist_canned.sh $PDY
+##############################################################
+  err=$?
+  if [ $err -eq 0 ]; then
+     echo "rate_label=$rate_label"
+     export today=`date +%Y%m%d`
+     export EndTime=`date +%H:%M:%S`
+     t2=$SECONDS
+     ta=`expr $t2 '-' $t1 `
+     echo "$from $EndTime ${SITE} to hpss " > $rate_label_log
+     ${USHrunhistory}/hpss_transfer_rates.pl ${stdout_file} >> $rate_label_log
+     echo $rate_label >> $rate_label_log
+     ecflow_client --label info "`cat $rate_label_log | grep -v output`"
+
+     present_time=`date`
+     transfer_rate=`cat $rate_label_log | grep Total`
+     msg="${transfer_rate}"
+     echo $msg
+
+     MBps=`cat $rate_label_log | grep Total|awk '{print $5 " MB/s"}'`
+     if [[ "$MBps" = "0.00 MB/s" || "$MBps" = "" ]]; then
+        echo "MBps=$MBps , skipping "
+     else
+        echo "$StartTime $EndTime $MBps  ${HOSTNAME}  hpss"  >> ${COMOUT}
+     fi
+     hpss_success=true
+  else
+     if [ "${SENDECF^^}" = "YES" ]; then
+       label_message+="error code $err to hpss
+"
+       ecflow_client --label l "$label_message"
+     fi
+     ((rsync_attempts++))
+     if [ $rsync_attempts -ge $RSYNC_MAX_ATTEMPTS ]; then
+         err_exit "$job failed after $RSYNC_MAX_ATTEMPTS attempts trying to hpss..."
+         echo "$job failed after $RSYNC_MAX_ATTEMPTS attempts trying to copy $rsync_source to hpss"
+         echo " sleep 60 and try later ...."
+         sleep 60
+         exit
+     else
+        sleep 10
+     fi
+  fi
+done
+
+date
+cd $DATAROOT
+if [ "$KEEPDATA" != YES ]; then rm -rf $DATA; fi

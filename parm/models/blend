@@ -1,0 +1,7 @@
+runjobs         jrunhistory_daily
+whichpdys       PDYm2
+dir             /lfs/h1/ops/prod/com/blend/blend_ver/blend.%thepdy%
+storetypes      1yr
+files           */grib2/*
+excludefiles	*/grib2/blend.t??z.master.f???.??.grib2
+dotransfer

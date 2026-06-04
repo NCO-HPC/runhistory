@@ -1,0 +1,10 @@
+runjobs     jrunhistory%modelcyc%
+whichpdys   PDYm2
+dir         $(compath.py hgefs/hgefs_ver/hgefs).%thepdy%/%modelcyc%/
+###
+modelcycs   00,06,12,18
+storetypes  2yr
+#
+filelist       ./ensstat/products/atmos/grib2/* # is explicit subdir structure necessary?
+tarmod      .ensstat_atmos
+dotransfer

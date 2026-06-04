@@ -1,0 +1,6 @@
+whichpdys           PDYm1
+runjobs             jrunhistory_daily
+storetypes          perm
+dir                 $(compath.py rtma/rtma_ver/pcprtma).%thepdy%
+files               ./
+dotransfer

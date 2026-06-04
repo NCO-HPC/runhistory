@@ -1,0 +1,33 @@
+whichpdys       PDYm2
+dir             $(compath.py nosofs/nosofs_ver/creofs).%thepdy%
+runjobs         jrunhistory_daily
+
+storetypes      5yr
+files           *ofs.stations*
+tarmod          .outputs
+dotransfer
+
+storetypes      2yr
+files           *ofs.fields.n*
+tarmod          .outputs
+dotransfer
+
+storetypes      1yr
+files           *ofs.fields.f*
+tarmod          .outputs
+dotransfer
+
+storetypes      5yr
+files           *ofs.nowcast*
+excludefiles    *ofs.nowcast*log*
+moreexcludefiles    *log*ofs.nowcast*
+morefiles           *ofs.forecast*
+moreexcludefiles    *ofs.forecast*log*
+moreexcludefiles    *log*ofs.forecast*
+morefiles           *ofs.met*
+morefiles           *ofs.obc*
+moreexcludefiles    *dat*ofs.obc*
+moreexcludefiles    *ofs.obc*dat*
+morefiles           *ofs.river*
+tarmod          .inputs
+dotransfer

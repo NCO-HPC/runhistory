@@ -1,0 +1,44 @@
+runjobs             jrunhistory_daily
+whichpdys           PDYm1
+dir                 $(compath.py lmp/lmp_ver/lmp).%thepdy%
+storetypes          5yr
+
+files               ./lmp.t*z.1h{cnv,ltg}_{nam,gfs}mos.tdlpsq 
+morefiles           ./lmp.t*30z.1hcnvltg.2p5km.grib2 
+morefiles           ./lmp.t*z.1hltg_flashes.ascii 
+morefiles           ./lmp.*.ak{cnv,ltg}_{ecm,nam,rap}mos.tdlpsq
+morefiles           ./lmp.t*z.ak{cnv,ltg}prb.meld3p0_p.grib2
+morefiles           ./lmp.t*z.bufrmsg.xtrn.bufr 
+morefiles           ./lmp.t*30z.compobs.tdlp
+morefiles           ./lmp.t*30z.gfspreds.tdlp
+morefiles           ./lmp.t*z.gfspreds_subh.tdlp
+morefiles           ./lmp.t*30z.grdmodl.tdlp
+morefiles           ./lmp.t*z.hrrr_{hrly,subh}*3km.g.tdlpsq
+morefiles           ./lmp.t*z.hrrr3mos_fcsts.tdlpsq
+morefiles           ./lmp.t*z.hrrrmos_tdpw_fcsts.tdlpsq
+morefiles           ./lmp.t{02,08,14,20}z.hrrrmos_tdpw_fcsts_ext.tdlpsq
+morefiles           ./lmp.t*z.lavtxt{_ext,_full,}.ascii
+morefiles           ./lmp.t*30z.lavtxt{_ext,_full,}_cat.ak.ascii
+morefiles           ./lmp.t*30z.ltggrd.tdlp
+morefiles           ./lmp.t*30z.mrms2rcm_pkd.tdlp
+morefiles           ./lmp.2[0-1][0-9][0-9][0-1][0-9][0-3][0-9]_[0-2][0-9][0-5][0-9].mrms{_*,qc}.g.tdlp
+morefiles           ./lmp.t*30z.obspkd.tdlp
+morefiles           ./lmp.*.pop01_{ecm,hrrr,nam}mos.tdlpsq
+morefiles           ./lmp.t*30z.radgrd.qc.tdlp
+morefiles           ./lmp.t*z.rap_hrly.2p5km.g.tdlpsq
+morefiles           ./lmp.t*z.rapmos_tdpw_fcsts.tdlpsq
+morefiles           ./lmp.t{04,10,16,22}z.rapmos_tdpw_fcsts_ext.tdlpsq
+morefiles           ./lmp.t*z.rapmos_tdpw_glmpfg_2p5.g.tdlpsq
+morefiles           ./lmp.t{04,10,16,22}z.ext.rapmos_tdpw_glmpfg_2p5.g.tdlpsq
+morefiles           ./lmp.t*30z.rawmetar_early.ascii
+morefiles           ./lmp.t*30z.sc{e,w}_mdlp.tdlp
+morefiles           ./lmp.t*z.sfctbl_early.ascii
+morefiles           ./lmp.t*z.stn_lavfcsts.tdlpsq
+morefiles           ./lmp.t*30z.stnmosfcsts.tdlpra
+morefiles           ./lmp.t*30z.tcus_{east,west}.ascii
+morefiles           ./lmp.t*z.{fltcat,simpbull}*.txt
+morefiles           ./lmp.t[0-2][0-9][0-9][0-9]z.grdmodlstnpreds_subh.tdlp
+morefiles           ./lmp.t[0-2][0-9]z.hrrr3subhmos_finalfcsts.tdlp
+morefiles           ./lmp.t[0-2][0-9][0-9][0-9]z.stnmosfcsts_subh.tdlp
+morefiles           ./lmp.t[0-2][0-9][0-9][0-9]z.grdmodl_15m_{mrms,cvs}.tdlp
+dotransfer

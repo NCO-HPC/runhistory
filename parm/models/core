@@ -1,0 +1,20 @@
+runjobs     jrunhistory%modelcyc%
+whichpdys   PDYm2
+dir         $(compath.py core/core_ver/core).%thepdy%/%modelcyc%/
+###
+modelcycs   00,06,12,18
+#
+storetypes  perm
+files       ./post/bfg_grb2/*
+morefiles   ./post/bfg_nemsio/*
+morefiles   ./post/diag/*
+morefiles   ./post/ensmean/*
+morefiles   ./post/flx/*
+morefiles   ./post/flx_stats/*
+morefiles   ./post/logs/*
+morefiles   ./post/nceppost/*
+morefiles   ./post/obsproc/*
+morefiles   ./post/spost/*
+morefiles   ./post/spost_stats/*
+tarmod      %modelcyc%.post
+dotransfer

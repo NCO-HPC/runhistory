@@ -1,0 +1,7 @@
+whichpdys           PDYm1
+storetypes          perm
+runjobs             jrunhistory12
+dir                 /lfs/h1/ops/prod/com/rap/rap_ver/nwges/rapges
+files               %dir%/rap_%thepdy%{08f001,20f001}
+tarmod              .%thepdy%
+dotransfer

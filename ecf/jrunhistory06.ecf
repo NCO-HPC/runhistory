@@ -1,0 +1,79 @@
+#PBS -N runhistory06_%TIME%
+#PBS -S /bin/bash
+#PBS -j oe
+#PBS -A %PROJ%-%PROJENVIR%
+#PBS -q %QUEUE%
+#PBS -l walltime=18:00:00
+#PBS -l select=1:ncpus=1:mem=%MEM:30GB%
+#PBS -l debug=true
+
+export model=runhistory
+%include <head.h>
+%include <envir-p1.h>
+
+export njob=%TASK%
+
+#for v2d used in scripts/exrhist.sh 
+hafs_ver=%hafs_ver%
+export hafs_v2d=$(echo $hafs_ver | sed 's|\(.*\)\..*|\1|')
+
+export active_server=%ECF_LOGHOST%
+export active_port=%ECF_PORT%
+
+export cyc=%CYC%
+export rhistlist="%RHISTLIST:all%"
+export excludelist="%EXCLUDELIST:%"
+
+export RSYNC_MAXTIME=%RSYNC_MAXTIME:30%
+export LOG_DAYS_KEEP=%LOG_DAYS_KEEP:5%
+export WRITE_LOG_DIR=%WRITE_LOG_DIR:YES%
+export RSYNC_LOG_DIR=%RSYNC_LOG_DIR:YES%
+export READ_LOG_DIR=%READ_LOG_DIR:YES%
+export CHECK_HPSS_IDX=%CHECK_HPSS_IDX:YES%
+export DRY_RUN_ONLY=%DRY_RUN_ONLY:NO%
+
+${HOMErunhistory}/jobs/JRHIST
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort
+  exit
+fi
+
+%include <tail.h>
+%manual
+################################################################################
+TASKSCRIPT DOCUMENTATION BLOCK
+
+TASKSCRIPT:     jrunhistory06
+LAST MODIFIER:  Gregory Mott (Gregory.Mott@noaa.gov)
+DATE:           Jun 2022
+
+FULL NAME:    /prod/primary/cron/runhistory/v?.?/jrunhistory06
+TRIGGERED BY: time trigger
+TRIGGERS:     cron 23:36
+
+PURPOSE:  To execute the job that archives NCEP production data from 06z cycle to HPSS
+
+JOB SCRIPT CALLED: .../packages/runhistory.v?.?.?/jobs/JRHIST ==>
+                   .../packages/runhistory.v?.?.?/scripts/exrhist.sh
+                   .../packages/runhistory.v?.?.?/ush/rhist.sh (and misc. other ush scripts)
+
+JOB SPECIFIC VARIABLES WITH DEFAULT VALUES (can be changed through ecFlow):
+
+RSYNC_MAXTIME=30 # timeout for rsync in seconds                                                                                                                             
+LOG_DAYS_KEEP=5 # $LOGrunhistory entries older than this are deleted at the beginning of every run                                                                                     
+WRITE_LOG_DIR=YES # YES: create a log entry in $LOGrunhistory for each successful ush/rhist_save* run                                                                            
+RSYNC_LOG_DIR=YES # YES: synchronize $LOGrunhistory (with the superset of all files) between Gyre and Tide at the beginning of every run                                               
+READ_LOG_DIR=YES # YES: use $LOGrunhistory to decide if archiving should be skipped                                                                                               
+CHECK_HPSS_IDX=YES # YES: check *.idx files on HPSS (file present: archiving is skipped)                                                                                   
+DRY_RUN_ONLY=NO # YES: do not write to the archive (useful for checking the script logic and the list of archived files)                                                     
+                #      but do clean/synchronize $LOGrunhistory                                                                                                                    
+                # use with READ_LOG_DIR=NO and CHECK_HPSS_IDX=NO to get full info even if archiving done before                                                              
+RHISTLIST=all # Comma/space-delimited list of models to archive; default is 'all', which archives all models.
+              # Model names correspond with filenames in $HOMErunhistory/parm/models/; which ones run during which jobs
+              # is determined by contents of files in $HOMErunhistory/parm/jrunhistory*
+EXCLUDELIST='' # Comma/space-delimited list of model to SKIP; default is empty variable, i.e., no models get skipped.
+               # Use this to temporarily skip models that are having issues in order to get on to the other models.
+               # As with RHISTLIST, model names correspond to names of model parm files.
+################################################################################
+%end

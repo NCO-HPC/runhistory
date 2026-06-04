@@ -1,0 +1,2 @@
+./gfs.%thepdy%/%modelcyc%/wave/gridded                       
+./gfs.%thepdy%/%modelcyc%/wave/station                       

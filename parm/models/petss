@@ -1,0 +1,10 @@
+modelcycs       00,06,12,18
+runjobs         jrunhistory%modelcyc%
+whichpdys       PDYm2
+storetypes      5yr
+dir             $(compath.py petss/petss_ver/petss).%thepdy%
+files           %dir%/*t%modelcyc%z*{grib2,txt,tar}*
+excludefiles    %dir%/*stn_img.tar.gz
+morefiles       %dir%/*.t%modelcyc%z.*{anoma,tide}14*.csv
+tarmod          %modelcyc%.output
+dotransfer

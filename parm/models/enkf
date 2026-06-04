@@ -1,0 +1,62 @@
+modelcycs   00,06,12,18
+runjobs     jrunhistory%modelcyc%
+whichpdys   PDYm2
+dir         $(compath.py gfs/gfs_ver)
+logarg1     %dir%/enkfgdas.%thepdy%/%modelcyc%
+
+storetypes      perm
+filelist        gfs/enkfgdas.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas
+dotransfer
+
+storetypes	5yr
+filelist	gfs/enkfgdas_grp1.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp1
+dotransfer
+filelist	gfs/enkfgdas_grp2.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp2
+dotransfer
+filelist	gfs/enkfgdas_grp3.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp3
+dotransfer
+filelist	gfs/enkfgdas_grp4.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp4
+dotransfer
+filelist	gfs/enkfgdas_grp5.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp5
+dotransfer
+filelist	gfs/enkfgdas_grp6.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp6
+dotransfer
+filelist	gfs/enkfgdas_grp7.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp7
+dotransfer
+filelist	gfs/enkfgdas_grp8.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_grp8
+dotransfer
+
+storetypes	perm
+filelist	gfs/enkfgdas_restart_grp1.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp1
+dotransfer
+filelist	gfs/enkfgdas_restart_grp2.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp2
+dotransfer
+filelist	gfs/enkfgdas_restart_grp3.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp3
+dotransfer
+filelist	gfs/enkfgdas_restart_grp4.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp4
+dotransfer
+filelist	gfs/enkfgdas_restart_grp5.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp5
+dotransfer
+filelist	gfs/enkfgdas_restart_grp6.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp6
+dotransfer
+filelist	gfs/enkfgdas_restart_grp7.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp7
+dotransfer
+filelist	gfs/enkfgdas_restart_grp8.txt
+tarmod          _enkfgdas.%thepdy%_%modelcyc%.enkfgdas_restart_grp8
+dotransfer

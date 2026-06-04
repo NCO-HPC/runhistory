@@ -1,0 +1,126 @@
+whichpdys           PDYm1
+modelcycs           00,06,12,18
+runjobs             jrunhistory%modelcyc%
+dir                 $(compath.py nam/nam_ver/nam).%thepdy%
+
+storetypes          1yr
+files               ./*t%modelcyc%z*bsmart{09,1[0-9],2[0-9],3[0-9],4[0-9],5[0-9],6[0-9]}*
+tarmod              %modelcyc%.bsmart
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*{bsmart00.tm00,bsmart01.tm00,bsmart02.tm00,bsmart03.tm00,bsmart04.tm00,bsmart05.tm00,bsmart06.tm00,bsmart07.tm00,bsmart08.tm00}
+tarmod              %modelcyc%.bsmartdng
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z{mdl_,*awphys}*
+tarmod              %modelcyc%.awphys
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*{awak3d*grib2,awak3d*icwf}*
+tarmod              %modelcyc%.awak3d
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*awip32*
+tarmod              %modelcyc%.awip32
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*awp151*
+tarmod              %modelcyc%.awp151
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*{awldas,awip3d*grib2,awip20*grib2,awip12*grib2,awp242,awipak*grib2}*
+tarmod              %modelcyc%.awip
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*{awiphi,awp207*grib2,awp211*grib2,awp217*grib2,awp237*grib2,grbgrd}*
+tarmod              %modelcyc%.grbgrd
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*{goes151*grib2,goes218*grib2,goes221*grib2,goes243*grib2}*
+tarmod              %modelcyc%.goesll
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*{bgrd3d00.tm00,bgrd3d03.tm00,bgrd3d06.tm00,bgrd3d09.tm00}*
+morefiles           ./*t%modelcyc%z*{bgrd3d12.tm00,bgrd3d15.tm00,bgrd3d18.tm00,bgrd3d21.tm00}*
+morefiles           ./*t%modelcyc%z*{bgrd3d24.tm00,bgrd3d27.tm00,bgrd3d30.tm00,bgrd3d33.tm00}*
+morefiles           ./*t%modelcyc%z*{bgrd3d36.tm00,bgrd3d39.tm00,bgrd3d42.tm00,bgrd3d45.tm00}*
+morefiles           ./*t%modelcyc%z*bgrd3d48.tm00*
+tarmod              %modelcyc%.bgrd3d
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*{bgrdsf,bgdawp00.tm03}*
+tarmod              %modelcyc%.bgrid
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*bgdawp*tm00*
+tarmod              %modelcyc%.bgdawp
+dotransfer
+
+storetypes          1yr
+files               ./*t%modelcyc%z*afwahi*
+tarmod              %modelcyc%.afwahi
+dotransfer
+
+storetypes          1yr
+files               ./*t%modelcyc%z*afwaca*
+tarmod              %modelcyc%.afwaca
+dotransfer
+
+storetypes          1yr
+files               ./*t%modelcyc%z*afwacs*
+tarmod              %modelcyc%.afwacs
+dotransfer
+
+storetypes          1yr
+files               ./*t%modelcyc%z*afwaak*
+tarmod              %modelcyc%.afwaak
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*alaskanest.hiresf*
+tarmod              %modelcyc%.alaskanest
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*conusnest.hiresf*
+tarmod              %modelcyc%.conusnest
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*firewxnest.hiresf*
+tarmod              %modelcyc%.firewxnest
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*hawaiinest.hiresf*
+tarmod              %modelcyc%.hawaiinest
+dotransfer
+
+storetypes          2yr
+files               ./*t%modelcyc%z*priconest.hiresf*
+tarmod              %modelcyc%.priconest
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*{configure,boco,gridnavfw,center,ijstart,pcp,ST,rfc,lspa,avgbudsum,location,accum,snow}*
+tarmod              %modelcyc%.input 
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*ieee_d
+morefiles           ./*t%modelcyc%z*{cyclone,tcvitals,tropcy_relocation,reject,syndata,satbias,satang,cnvstat,radstat,suob,fits,nampcpnv}*
+morefiles           ./*t%modelcyc%z*bufr*
+morefiles           ./*bufr*t%modelcyc%z*
+tarmod              %modelcyc%.bufr
+dotransfer

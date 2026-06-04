@@ -1,0 +1,6 @@
+./gdas.%thepdy%/%modelcyc%/wave/rundata/gdaswave.glix_10m*                   
+./gdas.%thepdy%/%modelcyc%/wave/rundata/gdaswave.log*
+./gdas.%thepdy%/%modelcyc%/wave/rundata/gdaswave.mod_def*
+./gdas.%thepdy%/%modelcyc%/wave/rundata/gdaswave.out_grd*
+./gdas.%thepdy%/%modelcyc%/wave/rundata/gdaswave.out_pnt*
+./gdas.%thepdy%/%modelcyc%/wave/rundata/ww3_multi.gdaswave*

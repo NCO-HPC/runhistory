@@ -1,0 +1,25 @@
+whichpdys   PDYm2
+dir         $(compath.py psurge/psurge_ver/psurge).%thepdy%
+skipnodir
+runjobs     jrunhistory_daily
+
+storetypes  5yr
+files       ./*%thepdy%00*
+tarmod      00
+dotransfer  optional
+
+storetypes  5yr
+files       ./*%thepdy%06*
+tarmod      06
+dotransfer  optional
+
+storetypes  5yr
+files       ./*%thepdy%12*
+tarmod      12
+dotransfer  optional
+
+storetypes  5yr
+files       ./*%thepdy%18*
+tarmod      18
+dotransfer  optional
+

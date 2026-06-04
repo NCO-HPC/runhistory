@@ -1,0 +1,5 @@
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.atmi003.nc                       
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.atminc.nc                       
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.atmi009.nc                       
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.dtfanl.nc                       
+./gfs.%thepdy%/%modelcyc%/atmos/RESTART                                

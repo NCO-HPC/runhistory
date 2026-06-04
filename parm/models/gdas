@@ -1,0 +1,39 @@
+modelcycs       00,06,12,18
+runjobs         jrunhistory%modelcyc%
+logarg1         %dir%/gdas.%thepdy%/%modelcyc%
+dir             $(compath.py gfs/gfs_ver)
+whichpdys       PDYm2
+storetypes      perm
+#
+filelist        gfs/gdas.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdas
+dotransfer
+#
+filelist        gfs/gdas_flux.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdas_flux
+dotransfer
+#
+filelist        gfs/gdas_pgrb2.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdas_pgrb2
+dotransfer
+#
+filelist        gfs/gdas_restart.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdas_restart
+dotransfer
+#
+filelist        gfs/gdas_nc.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdas_nc
+dotransfer
+#
+filelist        gfs/gdaswave_keep.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdaswave_keep
+dotransfer
+#
+storetypes      5yr
+filelist        gfs/gdaswave_output.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdaswave_output
+dotransfer
+#
+filelist        gfs/gdaswave_raw.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.gdaswave_raw
+dotransfer

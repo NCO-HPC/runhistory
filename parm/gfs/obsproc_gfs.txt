@@ -1,0 +1,14 @@
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.engicegrb                        
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.imssnow96.grib2                  
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.nsstbufr                         
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.snow.usaf.grib2
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.imssnow96.asc
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.acqc*                            
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.*bufr_d                          
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.*bufr_d.nr                       
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.prepbufr*                        
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.prep.bufrtable                   
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.rtgssthr*                        
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.seaice*                          
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.sgesprep_pathname.tm00           
+./gfs.%thepdy%/%modelcyc%/atmos/obsproc_version*                        

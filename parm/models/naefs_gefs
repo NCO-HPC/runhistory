@@ -1,0 +1,34 @@
+whichpdys       PDYm2
+modelcycs       00,06,12,18
+runjobs         jrunhistory%modelcyc%
+dir             $(compath.py naefs/naefs_ver/gefs).%thepdy%/%modelcyc%
+#
+storetypes      2yr
+files           ./ndgd_gb2/*
+tarmod          .ndgd_gb2
+dotransfer
+#
+storetypes      1yr
+files           ./pgrb2ap5_an/*
+tarmod          .pgrb2ap5_an
+dotransfer
+#
+storetypes      2yr
+files           ./pgrb2ap5_bc/*
+tarmod          .pgrb2ap5_bc
+dotransfer
+#
+storetypes      1yr
+files           ./pgrb2ap5_wt/*
+tarmod          .pgrb2ap5_wt
+dotransfer
+#
+storetypes      1yr
+files           ./prcp_gb2/*
+tarmod          .prcp_gb2
+dotransfer
+#
+storetypes      2yr
+files           ./pgrb2ap5/*
+tarmod          .pgrb2ap5
+dotransfer

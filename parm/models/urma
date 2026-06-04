@@ -1,0 +1,30 @@
+dir             $(compath.py urma/urma_ver/urma).%thepdy%
+storetypes      perm
+
+whichpdys       PDYm1
+
+runjobs         jrunhistory00
+logarg2          %thepdy%00
+files           ./*{mintobs,maxtobs}*
+tarmod          00-05
+dotransfer
+
+runjobs         jrunhistory06
+logarg2          %thepdy%06
+files           ./*{mintobs,maxtobs}*
+tarmod          06-11
+dotransfer
+###
+whichpdys       PDYm2
+
+runjobs         jrunhistory12
+logarg2          %thepdy%12
+files           ./*{mintobs,maxtobs}*
+tarmod          12-17
+dotransfer
+
+runjobs         jrunhistory18
+logarg2          %thepdy%18
+files           ./*{mintobs,maxtobs}*
+tarmod          18-23
+dotransfer

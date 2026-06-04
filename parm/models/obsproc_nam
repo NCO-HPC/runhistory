@@ -1,0 +1,19 @@
+whichpdys           PDYm1
+modelcycs           00,06,12,18
+runjobs             jrunhistory%modelcyc%
+dir                 $(compath.py obsproc/obsproc_ver/nam).%thepdy%
+
+storetypes          perm
+files               ./*t%modelcyc%z*{nexrad,radwnd}* 
+tarmod              %modelcyc%.nexrad
+dotransfer
+
+storetypes          perm
+files               ./*t%modelcyc%z*ieee_d
+morefiles           ./*t%modelcyc%z*{cqc,sgesprep,sdm}*
+morefiles           ./*t%modelcyc%z*dump_alert_flag
+morefiles           ./*t%modelcyc%z*bufr*
+excludefiles        ./*nexrad*bufr*
+moreexcludefiles    ./*bufr_d.listing*
+tarmod              %modelcyc%.bufr
+dotransfer

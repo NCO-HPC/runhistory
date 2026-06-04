@@ -1,0 +1,7 @@
+whichpdys   PDYm1
+runjobs     jrunhistory_daily
+storetypes  1yr
+dir         $(compath.py nhcg/nhcg_ver/storm-data)/gfs_PACK.%thepdy%
+files       ./
+skipnodir
+dotransfer  optional

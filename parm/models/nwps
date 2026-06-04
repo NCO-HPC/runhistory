@@ -1,0 +1,29 @@
+whichpdys           PDYm2
+runjobs             jrunhistory_daily
+storetypes          2yr
+files               */*/*/*
+morefiles           */*/Warn_Forecaster*
+excludefiles        */*/*/*plots_CG*
+moreexcludefiles    */*/*/*wave_estofs_waterlevel*
+moreexcludefiles    */*/CG1/*PE*
+moreexcludefiles    */*/CG1/*00-0*
+
+dir                 $(compath.py nwps/nwps_ver/ar).%thepdy%
+dotransfer
+lognow
+
+dir                 $(compath.py nwps/nwps_ver/er).%thepdy%
+dotransfer
+lognow
+
+dir                 $(compath.py nwps/nwps_ver/pr).%thepdy%
+dotransfer
+lognow
+
+dir                 $(compath.py nwps/nwps_ver/sr).%thepdy%
+dotransfer
+lognow
+
+dir                 $(compath.py nwps/nwps_ver/wr).%thepdy%
+dotransfer
+lognow

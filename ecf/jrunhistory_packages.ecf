@@ -1,0 +1,61 @@
+#PBS -N runhistory_packages_%TIME%
+#PBS -S /bin/bash
+#PBS -j oe
+#PBS -A %PROJ%-%PROJENVIR%
+#PBS -q %QUEUE%
+#PBS -l walltime=14:00:00
+#PBS -l select=1:ncpus=1:mem=%MEM:30GB%
+#PBS -l debug=true
+
+export model=runhistory
+%include <head.h>
+%include <envir-p1.h>
+
+export njob=%TASK%
+
+#for v2d used in scripts/exrhist.sh 
+#hafs_ver=%hafs_ver%
+#export hafs_v2d=$(echo $hafs_ver | sed 's|\(.*\)\..*|\1|')
+
+#export active_server=%ECF_LOGHOST%
+#export active_port=%ECF_PORT%
+
+export cyc=%CYC%
+export rhistlist="%RHISTLIST:all%"
+export excludelist="%EXCLUDELIST:%"
+
+export RSYNC_MAXTIME=%RSYNC_MAXTIME:30%
+export LOG_DAYS_KEEP=%LOG_DAYS_KEEP:5%
+export WRITE_LOG_DIR=%WRITE_LOG_DIR:YES%
+export RSYNC_LOG_DIR=%RSYNC_LOG_DIR:YES%
+export READ_LOG_DIR=%READ_LOG_DIR:YES%
+export CHECK_HPSS_IDX=%CHECK_HPSS_IDX:YES%
+export DRY_RUN_ONLY=%DRY_RUN_ONLY:NO%
+
+${HOMErunhistory}/jobs/JRHIST
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort
+  exit
+fi
+
+%include <tail.h>
+%manual
+################################################################################
+TASKSCRIPT DOCUMENTATION BLOCK
+
+TASKSCRIPT:     jrunhistory_packages
+LAST MODIFIER:  Gregory Mott (Gregory.Mott@noaa.gov)
+DATE:           Jun 2022
+
+FULL NAME:    /prod/primary/cron/runhistory/v?.?/jrunhistory_packages
+TRIGGERED BY: time trigger
+TRIGGERS:     cron 23:44
+
+PURPOSE:  To execute the job that archives the /nwprod directory
+
+JOB SCRIPT CALLED: .../packages/runhistory.v?.?.?/jobs/JRHIST ==>
+                   .../packages/runhistory.v?.?.?/scripts/exrhist.sh
+
+################################################################################
+%end

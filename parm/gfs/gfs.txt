@@ -1,0 +1,15 @@
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.gsistat                          
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.abias*                        
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.jtwc-fnoc.tcvitals.tm00          
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.msupperair*                      
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.snogrb*                          
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.syndata*                         
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.goessimpgrb*                     
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.*npoess                          
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.special*                         
+./gfs.%thepdy%/%modelcyc%/atmos/bufr.t%modelcyc%z                              
+./gfs.%thepdy%/%modelcyc%/atmos/*gif                                    
+./gfs.%thepdy%/%modelcyc%/atmos/minmon                                  
+./gfs.%thepdy%/%modelcyc%/atmos/*gcip*                         
+./gfs.%thepdy%/%modelcyc%/atmos/gempak/gfs_*.snd                        
+./gfs.%thepdy%/%modelcyc%/atmos/gempak/gfs_*.sfc                        

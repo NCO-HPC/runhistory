@@ -1,0 +1,16 @@
+runjobs       jrunhistory_daily
+storetypes    perm
+
+whichpdys     PDY
+dir           /lfs/h1/ops/prod/dcom/decoder_logs
+files         ./*.log.1
+ignore72
+dotransfer
+
+whichpdys     PDYm1
+dir           /lfs/h1/ops/prod/dcom/ldmdata/obs
+
+files         ./ -name '*%thepdy%*'
+excludefiles  ./upperair/nexrad_level2
+ignore72
+dotransfer

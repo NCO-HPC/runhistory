@@ -1,0 +1,7 @@
+whichpdys       PDYm2
+dir             /lfs/h1/ops/prod/com/radarl2/radarl2_ver/radar.%thepdy%
+runjobs         jrunhistory_daily
+storetypes      perm
+files           ./*{refc_obs,grb2}*
+tarmod          .save
+dotransfer

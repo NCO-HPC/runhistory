@@ -1,0 +1,7 @@
+whichpdys           PDYm2
+runjobs             jrunhistory_daily
+storetypes          2yr
+dir                 $(compath.py ens_tracker/ens_tracker_ver/ecme).%thepdy%
+files               ./
+skipnodir
+dotransfer          optional

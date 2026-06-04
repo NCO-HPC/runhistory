@@ -1,0 +1,27 @@
+runjobs             jrunhistory%modelcyc%
+whichpdys           PDYm1
+modelcycs           00,06,12,18
+dir                 $(compath.py hiresw/hiresw_ver/hiresw).%thepdy%
+
+###
+storetypes          2yr
+#
+files               ./hiresw.t%modelcyc%z.{fv3,arw}_2p5km.f{00,03,06,09,12,15,18,21,24,27,30,33,36,39,42,45,48}.{conus,pr,hi,guam}.grib2
+morefiles           ./hiresw.t%modelcyc%z.{fv3,arw}_3km.f{00,03,06,09,12,15,18,21,24,27,30,33,36,39,42,45,48}.ak.grib2
+tarmod              %modelcyc%.smart
+dotransfer
+#
+files               ./hiresw.t%modelcyc%z.{fv3,arw}_5km.f{00,03,06,09,12,15,18,21,24,27,30,33,36,39,42,45,48}.{conus,pr,hi,ak,guam,conusmem2,prmem2,himem2,akmem2}.grib2
+morefiles           ./hiresw.t%modelcyc%z.{fv3,arw}_3km.f{00,03,06,09,12,15,18,21,24,27,30,33,36}.{conus,conusmem2}.subset.grib2
+tarmod              %modelcyc%.5km
+dotransfer
+#
+files               ./hiresw.t%modelcyc%z.{conus,pr,hi,ak,guam,conusmem2,prmem2,himem2,akmem2}{fv3,arw}.class1.bufr
+tarmod              %modelcyc%.bufr
+dotransfer
+###
+modelcycs           00,12
+storetypes          perm
+files               ./hiresw.t%modelcyc%z.guamarw.wrfprs{0?,1?,20,21,22,23,24}
+tarmod              %modelcyc%.wrfprsdng
+dotransfer

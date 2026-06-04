@@ -1,0 +1,60 @@
+#!/bin/ksh
+
+export PS4=' $SECONDS + '
+date -u
+set -xa
+
+export DATA=${DATA:-${DATAROOT:?}/${jobid:?}}
+[[ -d $DATA ]] && rm -rf $DATA
+mkdir -p $DATA
+cd $DATA
+
+mkdir -p $DATA/parm/models
+
+export NET=runhistory
+export cyc=12
+
+if [ "$envir" = prod ];
+then
+    export HPSSOUT=${HPSSOUT:-/NCEPPROD/hpssprod/runhistory}
+    export HPSSOUT_OBS=${HPSSOUT_OBS:-/NCEPOBSERV/hpssprod/runhistory}
+else
+    export HPSSOUT=${HPSSOUT:-/NCEPPROD/hpsspara/runhistory/ops.para}
+    export HPSSOUT_OBS=${HPSSOUT_OBS:-/NCEPOBSERV/hpsspara/runhistory/ops.para}
+fi
+
+# Set TMPDIR, which is needed by htar
+export TMPDIR=$DATA
+
+export cycle=t12z
+
+setpdy.sh
+. ./PDY
+
+export pgmout="OUTPUT.${pid}"
+
+export USHrunhistory=${USHrunhistory:-$HOMErunhistory/ush}
+export PARMrunhistory=${PARMrunhistory:-$DATA/parm}
+export PARMrunhistory_fixed=${PARMrunhistory_fixed:-$HOMErunhistory/parm}
+
+export RUN_DAY=${RUN_DAY:-17}
+
+#aqm_v2d from ecf, pulled from ecflow variable
+export COMINaqm=${COMINaqm:-$(compath.py aqm/${aqm_v2d})}
+export INPEMIDIRhps=${INPEMIDIRhps:-${COMINaqm}/emission}
+
+env
+
+# get the current day
+current_day=`date +%d`
+echo " the current day= $current_day"
+
+#############################################################
+# execute the script
+${HOMErunhistory}/scripts/exrhist_aqm_emission.sh 
+#############################################################
+if [ "$KEEPDATA" != "YES" ] ; then
+  rm -rf $DATA
+fi
+
+date

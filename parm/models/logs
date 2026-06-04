@@ -1,0 +1,10 @@
+shell           if [ "$envir" != prod ]; then exit 0; fi
+
+shell           mkdir -p /lfs/h1/ops/prod/output/runtime/ave30.save
+shell           rm -rf /lfs/h1/ops/prod/output/runtime/ave30.save/ave30.save/*
+shell           find /lfs/h1/ops/prod/output/runtime/ave30 -mtime -2 -exec cp -p {} /lfs/h1/ops/prod/output/runtime/ave30.save \;
+runjobs         jrunhistory_daily
+whichpdys       PDYm1
+dir             /lfs/h1/ops/prod/output/runtime/ave30.save
+storetypes      1yr
+dotransfer      optional

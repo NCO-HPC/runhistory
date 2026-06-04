@@ -1,0 +1,14 @@
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.radstat                  
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.nsstbufr                 
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.prepbufr                 
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.prepbufr_pre-qc          
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.prepbufr.acft_profiles   
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.abias                    
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.abias_air                
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.abias_int                
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.abias_pc                 
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.atmi003.nc                
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.atmi009.nc                
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.atminc.nc                
+./gdas.%thepdy%/%modelcyc%/atmos/gdas.t%modelcyc%z.dtfanl.nc                
+./gdas.%thepdy%/%modelcyc%/atmos/RESTART                         

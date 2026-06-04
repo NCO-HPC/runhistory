@@ -1,0 +1,10 @@
+modelcycs           00,06,12,18
+runjobs             jrunhistory%modelcyc%
+logarg1             %dir%/gfs.%thepdy%/%modelcyc%
+whichpdys           PDYm2
+dir                 $(compath.py obsproc/obsproc_ver)
+storetypes          perm
+#
+filelist            gfs/obsproc_gfs.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.obsproc_gfs
+dotransfer

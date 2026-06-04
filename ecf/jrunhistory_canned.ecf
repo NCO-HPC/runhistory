@@ -1,0 +1,66 @@
+#PBS -N runhistory_canned_%TIME%
+#PBS -S /bin/bash
+#PBS -j oe
+#PBS -A %PROJ%-%PROJENVIR%
+#PBS -q %QUEUE%
+#PBS -l walltime=00:%WTIME:20%:00
+#PBS -l select=1:ncpus=1:mem=12GB
+#PBS -l debug=true
+
+export model=runhistory
+%include <head.h>
+%include <envir-p1.h>
+
+export CANSIZE=${CANSIZE:-%CANSIZE:10GB%}
+
+module load intel/$intel_ver
+module load python/$python_ver
+module load util_shared/$util_shared_ver
+
+export rhistlist="%RHISTLIST:all%"
+export excludelist="%EXCLUDELIST:%"
+
+export RSYNC_MAXTIME=%RSYNC_MAXTIME:30%
+export LOG_DAYS_KEEP=%LOG_DAYS_KEEP:5%
+export WRITE_LOG_DIR=%WRITE_LOG_DIR:YES%
+export RSYNC_LOG_DIR=%RSYNC_LOG_DIR:YES%
+export READ_LOG_DIR=%READ_LOG_DIR:YES%
+export CHECK_HPSS_IDX=%CHECK_HPSS_IDX:YES%
+export DRY_RUN_ONLY=%DRY_RUN_ONLY:NO%
+
+export active_server=%ECF_LOGHOST%
+
+export cyc=`date -u +%%H`
+
+$HOMErunhistory/jobs/JRHIST_CANNED
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort
+  exit
+fi
+
+%include <tail.h>
+%manual
+#############################################################################################
+TASKSCRIPT DOCUMENTATION BLOCK
+
+TASKSCRIPT:     jrunhistory_canned
+LAST MODIFIER:  Simon Hsiao
+DATE:           Jun 2022
+
+purpose: run every 15 min to test WCOSS2 system to HPSS transfer rate and update transfer rate
+         info into the /lfs/h1/ops/$envir/com/logs/network_monitor/[cactus|dogwood]/$PDY/
+         for MRTG WCOSS2 HPSS Transfer Rate graph at - 
+         http://mrtg.ncep.noaa.gov/cgi-bin/rrdcgi?/var/www/html/mrtg/htdocs/dbnet/hpss_wcoss2_15m_rate.rhtml
+#############################################################################################
+   the runhistory_canned job will read data from com/runhistory/${runhistory_ver}`/${CANSIZE:-10GB}
+   CANSIZE - default 10GB and can be updated from ecflow var CANSIZE,  
+             available are 4GB, 10GB, 50GB, 100GB
+   WTIME   - adjust the ecflow walltime WTIME variable if needed
+   
+#############################################################################################
+%end
+
+
+
+

@@ -1,0 +1,16 @@
+whichpdys       PDYm2
+dir             $(compath.py nosofs/nosofs_ver/wcofs_da).%thepdy%
+runjobs         jrunhistory_daily
+
+storetypes      2yr
+files           *init.*
+morefiles       *mod.nc
+morefiles       *corms.log
+tarmod          .inputs
+dotransfer
+
+storetypes      5yr
+files           wcofs_da.t*z.*{obs,obc,clim,river,met.nowcast,tides}.nc
+morefiles       *%thepdy%*.in
+tarmod          .inputs
+dotransfer

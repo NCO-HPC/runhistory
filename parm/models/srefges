@@ -1,0 +1,29 @@
+whichpdys           PDYm1
+storetypes          2yr
+dir                 /lfs/h1/ops/prod/com/sref/sref_ver/nwges/sref.%thepdy%
+runjobs             jrunhistory00
+logarg2              %thepdy%03
+files               ./{ARW,NMB}.t03z*
+morefiles           ./*wrfout*15:00:00*
+tarmod              03
+dotransfer
+runjobs             jrunhistory06
+logarg2              %thepdy%09
+files               ./{ARW,NMB}.t09z*
+morefiles           ./*wrfout*21:00:00*
+tarmod              09
+dotransfer
+runjobs             jrunhistory12
+logarg2              %thepdy%15
+files               ./{ARW,NMB}.t15z*
+morefiles           ./*wrfout*03:00:00*
+tarmod              15
+dotransfer
+
+whichpdys           PDYm2
+runjobs             jrunhistory18
+logarg2              %thepdy%21
+files               ./{ARW,NMB}.t21z*
+morefiles           ./*wrfout*09:00:00*
+tarmod              21
+dotransfer

@@ -1,0 +1,165 @@
+runjobs     jrunhistory%modelcyc%
+whichpdys   PDYm2
+dir         $(compath.py gefs/gefs_ver/gefs).%thepdy%/%modelcyc%
+###
+modelcycs   00,06,12,18
+#
+storetypes  perm
+files       ./atmos/init/*
+tarmod      .atmos_init
+dotransfer
+#
+files       ./atmos/cfssst/*
+tarmod      .atmos_cfssst
+dotransfer
+#
+files       ./chem/pgrb2ap25/*
+tarmod      .chem_pgrb2ap25
+dotransfer
+#
+files       ./chem/pgrb2ap5/*
+tarmod      .chem_pgrb2ap5
+dotransfer
+#
+###
+modelcycs   00
+#
+files       ./wave/rundata/gefs.wave.mod_def*
+morefiles   ./wave/rundata/gefs.wave.ice*
+morefiles   ./wave/rundata/ww3_multi.*.inp
+tarmod      .wave_rundata
+dotransfer
+###
+modelcycs   00,12
+#
+storetypes  2yr
+#
+files       ./atmos/pgrb2ap5/*f000*
+morefiles   ./atmos/pgrb2ap5/*f006*
+morefiles   ./atmos/pgrb2ap5/*f012*
+morefiles   ./atmos/pgrb2ap5/*f018*
+morefiles   ./atmos/pgrb2ap5/*f024*
+morefiles   ./atmos/pgrb2ap5/*f030*
+morefiles   ./atmos/pgrb2ap5/*f036*
+morefiles   ./atmos/pgrb2ap5/*f042*
+morefiles   ./atmos/pgrb2ap5/*f048*
+morefiles   ./atmos/pgrb2ap5/*f054*
+morefiles   ./atmos/pgrb2ap5/*f060*
+morefiles   ./atmos/pgrb2ap5/*f066*
+morefiles   ./atmos/pgrb2ap5/*f072*
+morefiles   ./atmos/pgrb2ap5/*f078*
+morefiles   ./atmos/pgrb2ap5/*f084*
+morefiles   ./atmos/pgrb2ap5/*f090*
+morefiles   ./atmos/pgrb2ap5/*f096*
+morefiles   ./atmos/pgrb2ap5/*f102*
+morefiles   ./atmos/pgrb2ap5/*f108*
+morefiles   ./atmos/pgrb2ap5/*f114*
+morefiles   ./atmos/pgrb2ap5/*f120*
+morefiles   ./atmos/pgrb2ap5/*f126*
+morefiles   ./atmos/pgrb2ap5/*f132*
+morefiles   ./atmos/pgrb2ap5/*f138*
+morefiles   ./atmos/pgrb2ap5/*f144*
+morefiles   ./atmos/pgrb2ap5/*f150*
+morefiles   ./atmos/pgrb2ap5/*f156*
+morefiles   ./atmos/pgrb2ap5/*f162*
+morefiles   ./atmos/pgrb2ap5/*f168*
+morefiles   ./atmos/pgrb2ap5/*f174*
+morefiles   ./atmos/pgrb2ap5/*f180*
+morefiles   ./atmos/pgrb2ap5/*f186*
+morefiles   ./atmos/pgrb2ap5/*f192*
+morefiles   ./atmos/pgrb2ap5/*f198*
+morefiles   ./atmos/pgrb2ap5/*f204*
+morefiles   ./atmos/pgrb2ap5/*f210*
+morefiles   ./atmos/pgrb2ap5/*f216*
+morefiles   ./atmos/pgrb2ap5/*f222*
+morefiles   ./atmos/pgrb2ap5/*f228*
+morefiles   ./atmos/pgrb2ap5/*f234*
+morefiles   ./atmos/pgrb2ap5/*f240*
+morefiles   ./atmos/pgrb2ap5/*f246*
+morefiles   ./atmos/pgrb2ap5/*f25*
+morefiles   ./atmos/pgrb2ap5/*f26*
+morefiles   ./atmos/pgrb2ap5/*f27*
+morefiles   ./atmos/pgrb2ap5/*f28*
+morefiles   ./atmos/pgrb2ap5/*f29*
+morefiles   ./atmos/pgrb2ap5/*f3*
+morefiles   ./atmos/pgrb2ap5/*f4*
+morefiles   ./atmos/pgrb2ap5/*f5*
+morefiles   ./atmos/pgrb2ap5/*f6*
+morefiles   ./atmos/pgrb2ap5/*f7*
+morefiles   ./atmos/pgrb2ap5/*f8*
+tarmod      .atmos_pgrb2ap5
+dotransfer
+###
+modelcycs   00,12
+#
+files       ./atmos/pgrb2bp5/*f000*
+morefiles   ./atmos/pgrb2bp5/*f006*
+morefiles   ./atmos/pgrb2bp5/*f012*
+morefiles   ./atmos/pgrb2bp5/*f018*
+morefiles   ./atmos/pgrb2bp5/*f024*
+morefiles   ./atmos/pgrb2bp5/*f030*
+morefiles   ./atmos/pgrb2bp5/*f036*
+morefiles   ./atmos/pgrb2bp5/*f042*
+morefiles   ./atmos/pgrb2bp5/*f048*
+morefiles   ./atmos/pgrb2bp5/*f054*
+morefiles   ./atmos/pgrb2bp5/*f060*
+morefiles   ./atmos/pgrb2bp5/*f066*
+morefiles   ./atmos/pgrb2bp5/*f072*
+morefiles   ./atmos/pgrb2bp5/*f078*
+morefiles   ./atmos/pgrb2bp5/*f084*
+morefiles   ./atmos/pgrb2bp5/*f090*
+morefiles   ./atmos/pgrb2bp5/*f096*
+morefiles   ./atmos/pgrb2bp5/*f102*
+morefiles   ./atmos/pgrb2bp5/*f108*
+morefiles   ./atmos/pgrb2bp5/*f114*
+morefiles   ./atmos/pgrb2bp5/*f120*
+morefiles   ./atmos/pgrb2bp5/*f126*
+morefiles   ./atmos/pgrb2bp5/*f132*
+morefiles   ./atmos/pgrb2bp5/*f138*
+morefiles   ./atmos/pgrb2bp5/*f144*
+morefiles   ./atmos/pgrb2bp5/*f150*
+morefiles   ./atmos/pgrb2bp5/*f156*
+morefiles   ./atmos/pgrb2bp5/*f162*
+morefiles   ./atmos/pgrb2bp5/*f168*
+morefiles   ./atmos/pgrb2bp5/*f174*
+morefiles   ./atmos/pgrb2bp5/*f180*
+morefiles   ./atmos/pgrb2bp5/*f186*
+morefiles   ./atmos/pgrb2bp5/*f192*
+morefiles   ./atmos/pgrb2bp5/*f198*
+morefiles   ./atmos/pgrb2bp5/*f204*
+morefiles   ./atmos/pgrb2bp5/*f210*
+morefiles   ./atmos/pgrb2bp5/*f216*
+morefiles   ./atmos/pgrb2bp5/*f222*
+morefiles   ./atmos/pgrb2bp5/*f228*
+morefiles   ./atmos/pgrb2bp5/*f234*
+morefiles   ./atmos/pgrb2bp5/*f240*
+morefiles   ./atmos/pgrb2bp5/*f246*
+morefiles   ./atmos/pgrb2bp5/*f25*
+morefiles   ./atmos/pgrb2bp5/*f26*
+morefiles   ./atmos/pgrb2bp5/*f27*
+morefiles   ./atmos/pgrb2bp5/*f28*
+morefiles   ./atmos/pgrb2bp5/*f29*
+morefiles   ./atmos/pgrb2bp5/*f3*
+morefiles   ./atmos/pgrb2bp5/*f4*
+morefiles   ./atmos/pgrb2bp5/*f5*
+morefiles   ./atmos/pgrb2bp5/*f6*
+morefiles   ./atmos/pgrb2bp5/*f7*
+morefiles   ./atmos/pgrb2bp5/*f8*
+tarmod      .atmos_pgrb2bp5
+dotransfer
+###
+modelcycs   00,06,12,18
+#
+files       ./wave/gridded/*
+tarmod      .wave_gridded
+dotransfer
+#
+storetypes  5yr
+files       ./atmos/ensstat/*
+tarmod      .atmos_ensstat
+dotransfer
+
+files       ./atmos/pgrb2sp25/*
+tarmod      .atmos_pgrb2sp25
+dotransfer
+

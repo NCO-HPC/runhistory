@@ -1,0 +1,12 @@
+whichpdys           PDYm4
+runjobs             jrunhistory_daily
+dir                 $(compath.py rcdas/rcdas_ver/rcdas).%thepdy%
+storetypes          perm
+
+files               ./*{restrt00,restrt03,satbias}*
+tarmod              .input
+dotransfer
+
+files               ./*awip32.merged*
+tarmod              .awip
+dotransfer

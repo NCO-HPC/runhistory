@@ -1,0 +1,102 @@
+whichpdys   PDYm2
+dir         $(compath.py glwu/glwu_ver/glwu).%thepdy%
+
+#
+runjobs     jrunhistory00
+logarg2      %thepdy%00
+#
+storetypes  perm
+files       ./*{t00z,t01z,t02z,t03z,t04z,t05z}*{ice,log,restart,wind}
+morefiles   ./{what,where}*{t00z,t01z,t02z,t03z,t04z,t05z}*
+tarmod      00-05.keep
+dotransfer
+#
+storetypes  1yr
+files       ./glwu.glwu*{t00z,t01z,t02z,t03z,t04z,t05z}*{outgrd,outpnt}
+tarmod      00-05.raw
+dotransfer
+#
+storetypes  2yr
+files       ./glwu.grlc_2p5km*{t00z,t01z,t02z,t03z,t04z,t05z}*grib2
+tarmod      00-05.output
+dotransfer
+#
+storetypes  5yr
+files       ./*{t00z,t01z,t02z,t03z,t04z,t05z}*_tar*
+tarmod      00-05.point
+dotransfer
+
+#
+runjobs     jrunhistory06
+logarg2      %thepdy%06
+#
+storetypes  perm
+files       ./*{t06z,t07z,t08z,t09z,t10z,t11z}*{ice,log,restart,wind}
+morefiles   ./{what,where}*{t06z,t07z,t08z,t09z,t10z,t11z}*
+tarmod      06-11.keep
+dotransfer
+#
+storetypes  1yr
+files       ./glwu.glwu*{t06z,t07z,t08z,t09z,t10z,t11z}*{outgrd,outpnt}
+tarmod      06-11.raw
+dotransfer
+#
+storetypes  2yr
+files       ./glwu.grlc_2p5km*{t06z,t07z,t08z,t09z,t10z,t11z}*grib2
+tarmod      06-11.output
+dotransfer
+#
+storetypes  5yr
+files       ./*{t06z,t07z,t08z,t09z,t10z,t11z}*_tar*
+tarmod      06-11.point
+dotransfer
+
+#
+runjobs     jrunhistory12
+logarg2      %thepdy%12
+#
+storetypes  perm
+files       ./*{t12z,t13z,t14z,t15z,t16z,t17z}*{ice,log,restart,wind}
+morefiles   ./{what,where}*{t12z,t13z,t14z,t15z,t16z,t17z}*
+tarmod      12-17.keep
+dotransfer
+#
+storetypes  1yr
+files       ./glwu.glwu*{t12z,t13z,t14z,t15z,t16z,t17z}*{outgrd,outpnt}
+tarmod      12-17.raw
+dotransfer
+#
+storetypes  2yr
+files       ./glwu.grlc_2p5km*{t12z,t13z,t14z,t15z,t16z,t17z}*grib2
+tarmod      12-17.output
+dotransfer
+#
+storetypes  5yr
+files       ./*{t12z,t13z,t14z,t15z,t16z,t17z}*_tar*
+tarmod      12-17.point
+dotransfer
+
+#
+runjobs     jrunhistory18
+logarg2      %thepdy%18
+#
+storetypes  perm
+files       ./*{t18z,t19z,t20z,t21z,t22z,t23z}*{ice,log,restart,wind}
+morefiles   ./{what,where}*{t18z,t19z,t20z,t21z,t22z,t23z}*
+tarmod      18-23.keep
+dotransfer
+#
+storetypes  1yr
+files       ./glwu.glwu*{t18z,t19z,t20z,t21z,t22z,t23z}*{outgrd,outpnt}
+tarmod      18-23.raw
+dotransfer
+#
+storetypes  2yr
+files       ./glwu.grlc_2p5km*{t18z,t19z,t20z,t21z,t22z,t23z}*grib2
+tarmod      18-23.output
+dotransfer
+#
+storetypes  5yr
+files       ./*{t18z,t19z,t20z,t21z,t22z,t23z}*_tar*
+tarmod      18-23.point
+dotransfer

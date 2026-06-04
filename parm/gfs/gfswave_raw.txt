@@ -1,0 +1,6 @@
+./gfs.%thepdy%/%modelcyc%/wave/rundata/gfswave.glix_10m*                   
+./gfs.%thepdy%/%modelcyc%/wave/rundata/gfswave.log*
+./gfs.%thepdy%/%modelcyc%/wave/rundata/gfswave.mod_def*
+./gfs.%thepdy%/%modelcyc%/wave/rundata/gfswave.out_grd*
+./gfs.%thepdy%/%modelcyc%/wave/rundata/gfswave.out_pnt*
+./gfs.%thepdy%/%modelcyc%/wave/rundata/ww3_multi.gfswave*

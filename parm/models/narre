@@ -1,0 +1,5 @@
+whichpdys       PDYm2
+dir             $(compath.py narre/narre_ver/narre).%thepdy%
+runjobs         jrunhistory_daily
+storetypes      perm
+dotransfer

@@ -1,0 +1,42 @@
+modelcycs           00,06,12,18
+runjobs             jrunhistory%modelcyc%
+logarg1             %dir%/gfs.%thepdy%/%modelcyc%
+whichpdys           PDYm2
+dir                 $(compath.py gfs/gfs_ver)
+storetypes          perm
+#
+filelist            gfs/gfs.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfs
+dotransfer
+#
+filelist            gfs/gfs_flux.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfs_flux
+dotransfer
+#
+filelist            gfs/gfs_pgrb2.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfs_pgrb2
+dotransfer
+#
+filelist            gfs/gfs_pgrb2b.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfs_pgrb2b
+dotransfer
+#
+filelist            gfs/gfs_restart.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfs_restart
+dotransfer
+#
+filelist            gfs/gfs_nca.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfs_nca
+dotransfer
+#
+filelist            gfs/gfs_ncb.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfs_ncb
+dotransfer
+#
+filelist            gfs/gfswave_output.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfswave_output
+dotransfer
+#
+filelist            gfs/gfswave_raw.txt
+tarmod              _gfs.%thepdy%_%modelcyc%.gfswave_raw
+dotransfer

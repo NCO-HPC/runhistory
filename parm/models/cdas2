@@ -1,0 +1,13 @@
+whichpdys       PDYm3
+dir             $(compath.py cdas2/cdas2_ver/cdas2).%thepdy%
+runjobs         jrunhistory_daily
+storetypes      perm
+files           ./
+dotransfer
+
+whichpdys           PDYm6
+runjobs             jrunhistory_daily
+dir                 $(compath.py cdas2/cdas2_ver/cdas2).${PDYm6:0:6}
+files               ./*%thepdy%*
+storetypes          perm
+dotransfer

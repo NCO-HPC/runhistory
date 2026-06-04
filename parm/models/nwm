@@ -1,0 +1,387 @@
+runjobs         jrunhistory_nwm
+whichpdys       PDYm2
+storetypes      1yr
+dir             $(compath.py nwm/nwm_ver/nwm).%thepdy%
+
+files           ./forcing_analysis_assim/*.nc
+tarmod          .forcing_analysis_assim
+dotransfer
+
+files           ./forcing_analysis_assim_hawaii/*.nc
+tarmod          .forcing_analysis_assim_hawaii
+dotransfer
+
+files           ./forcing_analysis_assim_puertorico/*.nc
+tarmod          .forcing_analysis_assim_puertorico
+dotransfer
+
+files           ./forcing_short_range/*.nc
+tarmod          .forcing_short_range
+dotransfer
+
+files           ./forcing_short_range_hawaii/*.nc
+tarmod          .forcing_short_range_hawaii
+dotransfer
+
+files           ./forcing_short_range_puertorico/*.nc
+tarmod          .forcing_short_range_puertorico
+dotransfer
+
+files           ./forcing_medium_range/*.nc
+tarmod          .forcing_medium_range
+dotransfer
+
+files           ./forcing_long_range_mem1/*long_range_thin*.nc
+tarmod          .forcing_long_range_mem1
+dotransfer
+
+files           ./forcing_long_range_mem2/*long_range_thin*.nc
+tarmod          .forcing_long_range_mem2
+dotransfer
+
+files           ./forcing_long_range_mem3/*long_range_thin*.nc
+tarmod          .forcing_long_range_mem3
+dotransfer
+
+files           ./forcing_long_range_mem4/*long_range_thin*.nc
+tarmod          .forcing_long_range_mem4
+dotransfer
+
+files           ./restart/*nwm.rst*
+tarmod          .restart
+dotransfer
+
+files           ./restart_no_da/*nwm.rst*
+tarmod          .restart_no_da
+dotransfer
+
+files           ./restart_hawaii/*nwm.rst*
+tarmod          .restart_hawaii
+dotransfer
+
+files           ./restart_hawaii_no_da/*nwm.rst*
+tarmod          .restart_hawaii_no_da
+dotransfer
+
+files           ./restart_puertorico/*nwm.rst*
+tarmod          .restart_puertorico
+dotransfer
+
+files           ./restart_puertorico_no_da/*nwm.rst*
+tarmod          .restart_puertorico_no_da
+dotransfer
+
+files           ./restart_long/*nwm.rst*
+tarmod          .restart_long
+dotransfer
+
+files           ./restart_long_no_da/*nwm.rst*
+tarmod          .restart_long_no_da
+dotransfer
+
+files           ./usgs_timeslices/*.ncdf
+tarmod          .usgs_timeslices
+dotransfer      optional
+
+files           ./usace_timeslices/*.ncdf
+tarmod          .usace_timeslices
+dotransfer      optional
+
+files           ./canada_timeslices/*.ncdf
+tarmod          .canada_timeslices
+dotransfer
+
+files           ./merged_usgs_and_ca_timeslices/*.ncdf
+tarmod          .merged_usgs_and_ca_timeslices
+dotransfer      optional
+
+files           ./rfc_timeseries/*.ncdf
+tarmod          .rfc_timeseries
+dotransfer
+
+files           ./analysis_assim/*{channel,reservoir,terrain}*.nc
+tarmod          .analysis_assim
+dotransfer
+
+files           ./analysis_assim_no_da/*.nc
+tarmod          .analysis_assim_no_da
+dotransfer
+
+files           ./analysis_assim_hawaii/*{channel,reservoir,terrain}*.nc
+tarmod          .analysis_assim_hawaii
+dotransfer
+
+files           ./analysis_assim_hawaii_no_da/*.nc
+tarmod          .analysis_assim_hawaii_no_da
+dotransfer
+
+files           ./analysis_assim_puertorico/*{channel,reservoir,terrain}*.nc
+tarmod          .analysis_assim_puertorico
+dotransfer
+
+files           ./analysis_assim_puertorico_no_da/*.nc
+tarmod          .analysis_assim_puertorico_no_da
+dotransfer
+
+files           ./analysis_assim_long/*{channel,reservoir,terrain}*.nc
+tarmod          .analysis_assim_long
+dotransfer
+
+files           ./analysis_assim_long_no_da/*.nc
+tarmod          .analysis_assim_long_no_da
+dotransfer
+
+files           ./short_range/*{channel,reservoir,terrain}*.nc
+tarmod          .short_range
+dotransfer
+
+files           ./short_range_hawaii/*{channel,reservoir,terrain}*.nc
+tarmod          .short_range_hawaii
+dotransfer
+
+files           ./short_range_hawaii_no_da/*.nc
+tarmod          .short_range_hawaii_no_da
+dotransfer
+
+files           ./short_range_puertorico/*{channel,reservoir,terrain}*.nc
+tarmod          .short_range_puertorico
+dotransfer
+
+files           ./short_range_puertorico_no_da/*.nc
+tarmod          .short_range_puertorico_no_da
+dotransfer
+
+files           ./medium_range_mem1/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_mem1
+dotransfer
+
+files           ./medium_range_mem2/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_mem2
+dotransfer
+
+files           ./medium_range_mem3/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_mem3
+dotransfer
+
+files           ./medium_range_mem4/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_mem4
+dotransfer
+
+files           ./medium_range_mem5/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_mem5
+dotransfer
+
+files           ./medium_range_mem6/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_mem6
+dotransfer
+
+files           ./medium_range_no_da/*.nc
+tarmod          .medium_range_no_da
+dotransfer
+
+files           ./long_range_mem1/*{channel,reservoir,terrain}*.nc
+tarmod          .long_range_mem1
+dotransfer
+
+files           ./long_range_mem2/*{channel,reservoir,terrain}*.nc
+tarmod          .long_range_mem2
+dotransfer
+
+files           ./long_range_mem3/*{channel,reservoir,terrain}*.nc
+tarmod          .long_range_mem3
+dotransfer
+
+files           ./long_range_mem4/*{channel,reservoir,terrain}*.nc
+tarmod          .long_range_mem4
+dotransfer
+
+files           ./forcing_analysis_assim_extend/*.nc
+tarmod          .forcing_analysis_assim_extend
+dotransfer      optional
+
+files           ./analysis_assim_extend/*{channel,reservoir,terrain}*.nc
+tarmod          .analysis_assim_extend
+dotransfer      optional
+
+files           ./analysis_assim_extend_no_da/*.nc
+tarmod          .analysis_assim_extend_no_da
+dotransfer      optional
+
+
+files           ./restart_extend/*nwm.rst*/*.nc
+tarmod          .restart_extend
+dotransfer      optional
+
+files           ./restart_extend_no_da/*nwm.rst*/*.nc
+tarmod          .restart_extend_no_da
+dotransfer      optional
+
+files           ./medium_range_blend/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_blend
+dotransfer
+
+files           ./forcing_medium_range_blend/*.nc
+tarmod          .forcing_medium_range_blend
+dotransfer
+
+files           ./forcing_analysis_assim_alaska/*.nc
+tarmod          .forcing_analysis_assim_alaska
+dotransfer
+
+files           ./forcing_analysis_assim_extend_alaska/*.nc
+tarmod          .forcing_analysis_assim_extend_alaska
+dotransfer      optional
+
+files           ./forcing_short_range_alaska/*.nc
+tarmod          .forcing_short_range_alaska
+dotransfer
+
+files           ./forcing_medium_range_blend_alaska/*.nc
+tarmod          .forcing_medium_range_blend_alaska
+dotransfer
+
+files           ./forcing_medium_range_alaska/*.nc
+tarmod          .forcing_medium_range_alaska
+dotransfer
+
+files           ./analysis_assim_alaska/*{channel,reservoir,terrain}*.nc
+tarmod          .analysis_assim_alaska
+dotransfer
+
+files           ./analysis_assim_extend_alaska/*{channel,reservoir,terrain}*.nc
+tarmod          .analysis_assim_extend_alaska
+dotransfer      optional
+
+files           ./analysis_assim_alaska_no_da/*.nc
+tarmod          .analysis_assim_alaska_no_da
+dotransfer
+
+files           ./analysis_assim_extend_alaska_no_da/*.nc
+tarmod          .analysis_assim_extend_alaska_no_da
+dotransfer      optional
+
+files           ./short_range_alaska/*{channel,reservoir,terrain}*.nc
+tarmod          .short_range_alaska
+dotransfer
+
+files           ./medium_range_alaska_no_da/*.nc
+tarmod          .medium_range_alaska_no_da
+dotransfer
+
+files           ./medium_range_alaska_mem1/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_alaska_mem1
+dotransfer
+
+files           ./medium_range_alaska_mem2/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_alaska_mem2
+dotransfer
+
+files           ./medium_range_alaska_mem3/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_alaska_mem3
+dotransfer
+
+files           ./medium_range_alaska_mem4/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_alaska_mem4
+dotransfer
+
+files           ./medium_range_alaska_mem5/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_alaska_mem5
+dotransfer
+
+files           ./medium_range_alaska_mem6/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_alaska_mem6
+dotransfer
+
+files           ./medium_range_blend_alaska/*{channel,reservoir,terrain}*.nc
+tarmod          .medium_range_blend_alaska
+dotransfer
+
+files           ./restart_alaska/*
+tarmod          .restart_alaska
+dotransfer
+
+files           ./restart_alaska_no_da/*
+tarmod          .restart_alaska_no_da
+dotransfer
+
+files           ./restart_alaska_extend/*
+tarmod          .restart_alaska_extend
+dotransfer      optional
+
+files           ./restart_extend_alaska_no_da/*
+tarmod          .restart_extend_alaska_no_da
+dotransfer      optional
+
+files           ./restart_coastal/*
+tarmod          .restart_coastal
+dotransfer
+
+files           ./analysis_assim_coastal_atlgulf/*.nc
+tarmod          .analysis_assim_coastal_atlgulf
+dotransfer
+
+files           ./analysis_assim_coastal_hawaii/*.nc
+tarmod          .analysis_assim_coastal_hawaii
+dotransfer
+
+files           ./analysis_assim_coastal_pacific/*.nc
+tarmod          .analysis_assim_coastal_pacific
+dotransfer
+
+files           ./analysis_assim_coastal_puertorico/*.nc
+tarmod          .analysis_assim_coastal_puertorico
+dotransfer
+
+files           ./analysis_assim_extend_coastal_atlgulf/*.nc
+tarmod          .analysis_assim_extend_coastal_atlgulf
+dotransfer      optional
+
+files           ./analysis_assim_extend_coastal_pacific/*.nc
+tarmod          .analysis_assim_extend_coastal_pacific
+dotransfer      optional
+
+files           ./medium_range_blend_coastal_atlgulf/*.{nc,shef}
+tarmod          .medium_range_blend_coastal_atlgulf
+dotransfer      
+
+files           ./medium_range_blend_coastal_pacific/*.{nc,shef}
+tarmod          .medium_range_blend_coastal_pacific
+dotransfer
+
+files           ./medium_range_coastal_atlgulf_mem1/*.{nc,shef}
+tarmod          .medium_range_coastal_atlgulf_mem1
+dotransfer
+
+files           ./medium_range_coastal_pacific_mem1/*.{nc,shef}
+tarmod          .medium_range_coastal_pacific_mem1
+dotransfer
+
+files           ./short_range_coastal_atlgulf/*.{nc,shef}
+tarmod          .short_range_coastal_atlgulf
+dotransfer
+
+files           ./short_range_coastal_hawaii/*.{nc,shef}
+tarmod          .short_range_coastal_hawaii
+dotransfer
+
+files           ./short_range_coastal_pacific/*.{nc,shef}
+tarmod          .short_range_coastal_pacific
+dotransfer
+
+files           ./short_range_coastal_puertorico/*.{nc,shef}
+tarmod          .short_range_coastal_puertorico
+dotransfer
+
+files           ./medium_range_blend_coastal_atlgulf_psurge/*.{nc,shef}
+tarmod          .medium_range_blend_coastal_atlgulf_psurge
+dotransfer      optional
+
+files           ./medium_range_coastal_atlgulf_mem1_psurge/*.{nc,shef}
+tarmod          .medium_range_coastal_atlgulf_mem1_psurge
+dotransfer      optional
+
+files           ./short_range_coastal_atlgulf_psurge/*.{nc,shef}
+tarmod          .short_range_coastal_atlgulf_psurge
+dotransfer      optional
+
+

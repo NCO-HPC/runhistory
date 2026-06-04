@@ -1,0 +1,8 @@
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.awf_0p25*         
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.awf_grb45f*
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.wafs_0p25_unblended*                           
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.wafs_grb45*                            
+./gfs.%thepdy%/%modelcyc%/atmos/wafsgfs*
+./gfs.%thepdy%/%modelcyc%/atmos/WAFS_blended*                           
+./gfs.%thepdy%/%modelcyc%/atmos/WAFS_0p25_blended*                           
+./gfs.%thepdy%/%modelcyc%/atmos/*gcip*           

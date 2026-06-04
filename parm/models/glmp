@@ -1,0 +1,30 @@
+runjobs         jrunhistory_daily
+whichpdys       PDYm1
+dir             $(compath.py glmp/glmp_ver/glmp).%thepdy%
+storetypes      5yr
+
+files           ./glmp.t[0-2][0-9]30z.{cig,tdp*,vis,wsg*}.g.co.tdlpra
+morefiles       ./glmp.t[0-2][0-9]30z.sky.g.co.tdlpsq
+morefiles       ./glmp.t[0-2][0-9]30z.{cig,vis}_meld_ak_fcsts.tdlpsq
+morefiles       ./glmp.t[0-2][0-9]30z.{cvs_obs3pkd,compobs_cig,compobs_adjwinds,compobs_sky}.tdlp
+morefiles       ./glmp.t*30z.m1run.{cvs_obs3pkd,compobs_adjwinds,compobs_sky}.tdlp
+morefiles       ./glmp.t[0-2][0-9]30z.fcsts_cig{p2,p3,p5,}.g.co.grib2
+morefiles       ./glmp.t[0-2][0-9]30z.fcsts_vis{p2,p4,p5,}.g.co.grib2
+morefiles       ./glmp.t[0-2][0-9]30z.fcsts_{sky,t,td,wdir,wgst,wspd}.g.co.grib2
+morefiles       ./glmp.t[0-2][0-9]30z.fcsts_sky.g.co_ext.grib2
+morefiles       ./glmp.t[0-2][0-9]z.{,m1.}*gfs{mergesta,pkd47_Td}.tdlp
+morefiles       ./glmp.t[0-2][0-9]30z.grid_{cig,vis}_meldfcsts*.tdlpsq
+morefiles       ./glmp.t[0-2][0-9]30z.hr00_{cig,vis,sky,t,td,wdir,wgst,wspd}.g.co.grib2
+morefiles       ./glmp.t[0-2][0-9]30z.hr00_{cig,tdp,vis,wsg,sky}.g.co.tdlpra
+morefiles       ./glmp.t[0-2][0-9]30z.hr00_vis.g.ak.tdlpsq
+morefiles       ./glmp.t*30z.{m1run.,}obs[1-3]_sfctbl.ascii
+morefiles       ./glmp.t*30z.{m1run.,}{sce,scw,tdwg_obs3pkd}.tdlp
+morefiles       ./glmp.t[0-2][0-9]30z.hourly.f0[0-3][0-9].{ak,co}.grib2*
+morefiles       ./glmp.t[0-2][0-9][0-9][0-9]z.{cig,vis}_stn_subh.f000.conus.txt
+morefiles       ./glmp.t[0-2][0-9][0-9][0-9]z.fcsts_cig{p2,p3,p5,}_subh.co_ext.grib2
+morefiles       ./glmp.t[0-2][0-9][0-9][0-9]z.fcsts_vis{p2,p4,p5,}_subh.co_ext.grib2
+morefiles       ./glmp.t[0-2][0-9][0-9][0-9]z.{cig,vis}p_subh.co.tdlpsq
+morefiles       ./glmp.t[0-2][0-9][0-9][0-9]z.grid_{cig,vis}_meldfcsts_subh.tdlp
+morefiles       ./glmp.t[0-2][0-9][0-9][0-9]z.hr00_{cig,vis}_subh.co.tdlpsq
+morefiles       ./glmp.t[0-2][0-9]z.hrrr3subhmos_fcsts.tdlpsq
+dotransfer

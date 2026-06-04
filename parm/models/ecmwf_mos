@@ -1,0 +1,5 @@
+whichpdys           PDYm1
+runjobs             jrunhistory_daily
+storetypes          2yr
+dir                 $(compath.py ecmwf_mos/ecmwf_mos_ver/ecmwf_mos).%thepdy%
+dotransfer          optional

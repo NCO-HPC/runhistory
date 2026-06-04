@@ -1,0 +1,10 @@
+whichpdys       PDYm7
+runjobs         jrunhistory_daily
+dir             /lfs/h1/ops/prod/dcom/%thepdy%
+storetypes      perm
+tarmod          _%whichpdy%
+excludefiles	./wgrbbul/ecmwf_hres/*
+hpssout_obs
+logarg2          %whichpdy%
+ignore72
+dotransfer

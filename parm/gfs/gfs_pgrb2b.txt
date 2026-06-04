@@ -1,0 +1,9 @@
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.0p25.anl                  
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.0p25.anl.idx              
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.0p50.anl                  
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.0p50.anl.idx              
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.1p00.anl                  
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.1p00.anl.idx              
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.0p25.f*             
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.0p50.f*             
+./gfs.%thepdy%/%modelcyc%/atmos/gfs.t%modelcyc%z.pgrb2b.1p00.f*            

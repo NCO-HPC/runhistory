@@ -1,0 +1,30 @@
+dir             $(compath.py obsproc/obsproc_ver/urma).%thepdy%
+storetypes      perm
+
+whichpdys       PDYm1
+
+runjobs         jrunhistory00
+logarg2          %thepdy%00
+files           ./*t{00,01,02,03,04,05}z*bufr*
+tarmod          00-05
+dotransfer
+
+runjobs         jrunhistory06
+logarg2          %thepdy%06
+files           ./*t{06,07,08,09,10,11}z*bufr*
+tarmod          06-11
+dotransfer
+###
+whichpdys       PDYm2
+
+runjobs         jrunhistory12
+logarg2          %thepdy%12
+files           ./*t{12,13,14,15,16,17}z*bufr*
+tarmod          12-17
+dotransfer
+
+runjobs         jrunhistory18
+logarg2          %thepdy%18
+files           ./*t{18,19,20,21,22,23}z*bufr*
+tarmod          18-23
+dotransfer

@@ -1,0 +1,10 @@
+In the next run_history upgrade -p1/p2 transition to dell
+We will remove the JRHIST_AQM_EMISSION job (and exrunhist_aqm_emission.sh.ecf)
+and merge the aqm_emission archive to the same JRHIST job, just create a ush script for aqm_emission
+- JY 2018/12/17
+
+Integration of aqm_emission archiving into JRHIST did not happen as of v2.3.0. The main update needed will be for scripts/exrhist.sh.ecf to have some logic accomodating the 12z cycle wanted by aqm_emission (or for the transfer to happen at a different time?)
+- AR Feb 2020
+
+HMON and HWRF ush scripts could easily be consolidated.
+- AR Feb 2020

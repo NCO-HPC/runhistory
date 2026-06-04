@@ -1,0 +1,5 @@
+whichpdys           PDYm1
+runjobs             jrunhistory_daily
+storetypes          1yr
+dir                 $(compath.py fnmoc_wave/fnmoc_wave_ver/fnmoc_wave).%thepdy%
+dotransfer          optional

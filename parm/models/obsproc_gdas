@@ -1,0 +1,10 @@
+modelcycs       00,06,12,18
+runjobs         jrunhistory%modelcyc%
+logarg1         %dir%/gdas.%thepdy%/%modelcyc%
+dir             $(compath.py obsproc/obsproc_ver)
+whichpdys       PDYm2
+storetypes      perm
+#
+filelist        gfs/obsproc_gdas.txt
+tarmod          _gdas.%thepdy%_%modelcyc%.obsproc_gdas
+dotransfer

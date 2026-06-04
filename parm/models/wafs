@@ -1,0 +1,14 @@
+runjobs             jrunhistory_daily
+whichpdys           PDYm2
+storetypes          perm
+dir                 $(compath.py wafs/wafs_ver/wafs).%thepdy%
+
+files               ./*/upp/wafs*0p25.anl.grib2
+morefiles           ./*/gcip/*
+morefiles           ./*/grib2/0p25/WAFS*unblended*
+morefiles           ./*/grib2/0p25/*awf*
+morefiles           ./*/grib2/0p25/*wafs_0p25*
+morefiles           ./*/grib2/1p25/*awf*
+morefiles           ./*/grib2/1p25/*wafs_grb45*
+morefiles           ./*/grib2/0p25/blending/WAFS*blending*
+dotransfer

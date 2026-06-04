@@ -1,0 +1,24 @@
+whichpdys           PDYm1
+modelcycs           00,06,12,18
+runjobs             jrunhistory%modelcyc%
+dir                 $(compath.py smartinit/smartinit_ver/nam).%thepdy%
+
+storetypes          1yr
+files               ./*t%modelcyc%z*smartconus*
+tarmod              %modelcyc%.smartconus
+dotransfer
+
+storetypes          1yr
+files               ./*t%modelcyc%z*smartak*
+tarmod              %modelcyc%.smartak
+dotransfer
+
+storetypes          1yr
+files               ./*t%modelcyc%z*smarthi*
+tarmod              %modelcyc%.smarthi
+dotransfer
+
+storetypes          1yr
+files               ./*t%modelcyc%z*smartpr*
+tarmod              %modelcyc%.smartpr
+dotransfer
