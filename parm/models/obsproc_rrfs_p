@@ -4,13 +4,13 @@ dir             $(compath.py obsproc/obsproc_ver/rrfs_p).%thepdy%
 modelcycs       06
 whichpdys       PDYm1
 runjobs         jrunhistory06
-files           ./*.t{03,04,05,06,07,08}z
+files           ./*.t{03,04,05,06,07,08}z*
 tarmod          03-08.obsproc_bufr
 dotransfer
 
 modelcycs       18
 whichpdys       PDYm2
 runjobs         jrunhistory18
-files           ./*.t{15,16,17,18,19,20}z
+files           ./*.t{15,16,17,18,19,20}z*
 tarmod          15-20.obsproc_bufr
 dotransfer

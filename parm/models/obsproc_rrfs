@@ -13,7 +13,7 @@ runjobs         jrunhistory06
 logarg2          %thepdy%06
 #
 storetypes      perm
-files       ./*t{06,07,08,09,10,11}z
+files       ./*t{06,07,08,09,10,11}z*
 tarmod          06-11.obsproc_bufr
 dotransfer
 #
@@ -22,7 +22,7 @@ runjobs         jrunhistory12
 logarg2          %thepdy%12
 #
 storetypes      perm
-files       ./*t{12,13,14,15,16,17}z
+files       ./*t{12,13,14,15,16,17}z*
 tarmod          12-17.obsproc_bufr
 dotransfer
 #
@@ -32,7 +32,7 @@ logarg2          %thepdy%18
 whichpdys       PDYm2
 #
 storetypes      perm
-files       ./*t{18,19,20,21,22,23}z
+files       ./*t{18,19,20,21,22,23}z*
 tarmod          18-23.obsproc_bufr
 dotransfer
 #
