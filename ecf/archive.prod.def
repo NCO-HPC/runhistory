@@ -251,6 +251,7 @@ suite prod
             event gefs12
             event stofs_2d_glo12
             event stofs_3d_atl12
+            event stofs_3d_pac12
             event gdas12
             event gfs12
             event etss12
