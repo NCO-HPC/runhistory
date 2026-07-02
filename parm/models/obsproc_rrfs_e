@@ -1,0 +1,9 @@
+storetypes      perm
+dir             $(compath.py obsproc/obsproc_ver/rrfs_e).%thepdy%
+
+modelcycs       12
+whichpdys       PDYm1
+runjobs         jrunhistory12
+files           ./*.t{00,12}z*
+tarmod          00-12.obsproc_bufr
+dotransfer
