@@ -1,0 +1,6 @@
+whichpdys       PDYm2
+runjobs         jrunhistory_daily
+storetypes      2yr
+dir             $(compath.py gtgn/gtgn_ver/gtgn).%thepdy%
+files           %dir%/??/gtgn.*.3km.grib2
+dotransfer
