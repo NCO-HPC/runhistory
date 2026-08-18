@@ -8,12 +8,15 @@ suite prod
       edit CYC '00'
       edit QUEUE 'prod_transfer'
       family catchup
-        edit PDY '20241203'
+        task jhpss_cleanup
+          event cleanup_1year
+          event cleanup_2year
+          event cleanup_5year
         task jrunhistory_daily
-          defstatus complete
           label info " "
           event ccpa
           event logs
+          event narre
           event dcomPDYm2
           event dcomPDYm7
           event radarL2
@@ -30,7 +33,8 @@ suite prod
           event pcpanl
           event pcpurma
           event pcprtma
-          event psurge
+          event verf_precip
+          event verf_gridtobs
           event verf_cloud
           event verf_dust
           event verf_etop
@@ -50,16 +54,14 @@ suite prod
           event dbofs
           event tbofs
           event ngofs2
+          event creofs
           event sfbofs
           event wcofs_da
           event wcofs
           event gomofs
           event leofs
           event lmhofs
-          event loofs
-          event lsofs
           event ciofs
-          event sscofs
           event rcdas
           event wsa_enlil
           event fnmoc_wave
@@ -74,9 +76,6 @@ suite prod
           event ens_tracker_cmce
           event ens_tracker_fens
           event ens_tracker_ecme
-          event ens_tracker_aigfs
-          event ens_tracker_aigefs
-          event ens_tracker_hgefs
           event genesis_tracker_cmce
           event genesis_tracker_gefs
           event genesis_tracker_sref
@@ -88,13 +87,7 @@ suite prod
           event cpc
           event decoders
           event obsproc_hourly
-          event wdas
-          event wafs
-          event wfs
-          event wrs
-          event gtgn
         task jrunhistory00
-          edit DATE '05.03.2024'
           label info " "
           event hrrr_conus00
           event hrrr_alaska00
@@ -114,15 +107,15 @@ suite prod
           event cmcens00
           event fnmocens00
           event gefs00
-          event stofs_2d_glo00
+          event estofs00
           event gdas00
           event gfs00
           event etss00
-          event petss00
           event naefs00
           event naefs_gefs00
           event nam00
           event smartinit00
+          event nfcens00
           event glwu00
           event urma00
           event akurma00
@@ -162,11 +155,10 @@ suite prod
           event cmcens06
           event fnmocens06
           event gefs06
-          event stofs_2d_glo06
+          event estofs06
           event gdas06
           event gfs06
           event etss06
-          event petss06
           event naefs06
           event naefs_gefs06
           event nam06
@@ -211,16 +203,15 @@ suite prod
           event cmcens12
           event fnmocens12
           event gefs12
-          event stofs_2d_glo12
-          event stofs_3d_atl12
+          event estofs12
           event gdas12
           event gfs12
           event etss12
-          event petss12
           event naefs12
           event naefs_gefs12
           event nam12
           event smartinit12
+          event nfcens12
           event glwu12
           event urma12
           event akurma12
@@ -260,11 +251,10 @@ suite prod
           event cmcens18
           event fnmocens18
           event gefs18
-          event stofs_2d_glo18
+          event estofs18
           event gdas18
           event gfs18
           event etss18
-          event petss18
           event naefs18
           event naefs_gefs18
           event nam18
@@ -300,6 +290,9 @@ suite prod
         task jrunhistory_aqm_emission
           label info " "
           event aqm_emission
+        task jrunhistory_canned
+          label info " "
+          event nwprod
       endfamily
       task jhpss_cleanup
         event cleanup_1year
@@ -310,6 +303,7 @@ suite prod
         label info " "
         event ccpa
         event logs
+        event narre
         event dcomPDYm2
         event dcomPDYm7
         event radarL2
@@ -326,26 +320,36 @@ suite prod
         event pcpanl
         event pcpurma
         event pcprtma
-        event psurge
+        event verf_precip
+        event verf_gridtobs
+        event verf_cloud
+        event verf_dust
+        event verf_etop
+        event verf_reflt
+        event verf_urma
+        event verf_ens
+        event verf_firewx
+        event verf_vsdbgridtobs
+        event verf_vsdbgrid2grid
+        event verf_vsdbprecip
         event sice
         event sst
         event ukmet
         event dustconus
         event radarref
+        event glofs
         event cbofs
         event dbofs
         event tbofs
         event ngofs2
+        event creofs
         event sfbofs
         event wcofs_da
         event wcofs
         event gomofs
         event leofs
         event lmhofs
-        event loofs
-        event lsofs
         event ciofs
-        event sscofs
         event rcdas
         event wsa_enlil
         event fnmoc_wave
@@ -360,9 +364,6 @@ suite prod
         event ens_tracker_cmce
         event ens_tracker_fens
         event ens_tracker_ecme
-        event ens_tracker_aigfs
-        event ens_tracker_aigefs
-        event ens_tracker_hgefs
         event genesis_tracker_cmce
         event genesis_tracker_gefs
         event genesis_tracker_sref
@@ -373,14 +374,8 @@ suite prod
         event sfcship
         event cpc
         event decoders
-        event wdas
-        event wafs
-        event wfs
-        event wrs
-        event evs
-        event dafs
-        event gtgn
-        cron 00:02 00:04 00:02
+        event obsproc_hourly
+        cron 23:32
       task jrunhistory00
         label info " "
         event hrrr_conus00
@@ -401,15 +396,14 @@ suite prod
         event cmcens00
         event fnmocens00
         event gefs00
-        event stofs_2d_glo00
+        event estofs00
         event gdas00
         event gfs00
         event etss00
-        event petss00
         event naefs00
         event naefs_gefs00
         event nam00
-        event smartinit00
+        event nfcens00
         event glwu00
         event urma00
         event akurma00
@@ -426,14 +420,8 @@ suite prod
         event obsproc_nam00
         event obsproc_gfs00
         event obsproc_gdas00
-        event obsproc_rrfs00
         event hfsa00
         event hfsb00
-        event aigfs00
-        event aigefs00
-        event hgefs00
-        event refs00
-        cron 00:04 00:06 00:02
         cron 23:34
       task jrunhistory06
         label info " "
@@ -456,15 +444,13 @@ suite prod
         event cmcens06
         event fnmocens06
         event gefs06
-        event stofs_2d_glo06
+        event estofs06
         event gdas06
         event gfs06
         event etss06
-        event petss06
         event naefs06
         event naefs_gefs06
         event nam06
-        event smartinit06
         event glwu06
         event urma06
         event akurma06
@@ -482,16 +468,9 @@ suite prod
         event obsproc_nam06
         event obsproc_gfs06
         event obsproc_gdas06
-        event obsproc_rrfs06
-        event obsproc_rrfs_p06
         event hfsa06
         event hfsb06
-        event aigfs06
-        event aigefs06
-        event hgefs06
-        event refs06
-        cron 00:06 00:08 00:02
-        cron 23:34
+        cron 23:36
       task jrunhistory12
         label info " "
         event hrrr_conus12
@@ -513,16 +492,14 @@ suite prod
         event cmcens12
         event fnmocens12
         event gefs12
-        event stofs_2d_glo12
-        event stofs_3d_atl12
+        event estofs12
         event gdas12
         event gfs12
         event etss12
-        event petss12
         event naefs12
         event naefs_gefs12
         event nam12
-        event smartinit12
+        event nfcens12
         event glwu12
         event urma12
         event akurma12
@@ -539,16 +516,9 @@ suite prod
         event obsproc_nam12
         event obsproc_gfs12
         event obsproc_gdas12
-        event obsproc_rrfs12
-        event obsproc_rrfs_e12
         event hfsa12
         event hfsb12
-        event aigfs12
-        event aigefs12
-        event hgefs12
-        event refs12
-        cron 00:08 00:10 00:02
-        cron 23:34
+        cron 23:38
       task jrunhistory18
         label info " "
         event hrrr_conus18
@@ -570,15 +540,13 @@ suite prod
         event cmcens18
         event fnmocens18
         event gefs18
-        event stofs_2d_glo18
+        event estofs18
         event gdas18
         event gfs18
         event etss18
-        event petss18
         event naefs18
         event naefs_gefs18
         event nam18
-        event smartinit18
         event glwu18
         event urma18
         event akurma18
@@ -596,28 +564,21 @@ suite prod
         event obsproc_nam18
         event obsproc_gfs18
         event obsproc_gdas18
-        event obsproc_rrfs18
-        event obsproc_rrfs_p18
         event hfsa18
         event hfsb18
-        event aigfs18
-        event aigefs18
-        event hgefs18
-        event refs18
-        cron 00:10 00:12 00:02
-        cron 23:34
+        cron 23:40
       task jrunhistory_rtofs
         label info " "
         event rtofsglobal
-        cron 00:12 00:14 00:02
+        cron 23:42
       task jrunhistory_nwm
         label info " "
         event nwm
-        cron 00:16 00:18 00:02
+        cron 23:50
       task jrunhistory_packages
         label info " "
         event packages
-        cron 00:14 00:16 00:02
+        cron 23:44
       task jrunhistory_aqm_emission
         label info " "
         event aqm_emission
