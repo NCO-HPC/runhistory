@@ -1,0 +1,17 @@
+whichpdys   PDYm2
+modelcycs   00,06,12,18
+runjobs     jrunhistory%modelcyc%
+
+#####
+dir         $(compath.py stofs/stofs_ver/stofs_3d_pac).%thepdy%
+
+# input
+storetypes  perm
+files       ./rerun/stofs_3d_pac.t%modelcyc%z.restart.nc
+tarmod          %modelcyc%.input
+dotransfer
+# output
+storetypes  2yr
+files       ./stofs_3d_pac.t%modelcyc%z.*{points.cwl.temp.salt.vel,ncast.station.profile,fcast.station.profile,field2d}*.nc
+tarmod          %modelcyc%.output
+dotransfer
