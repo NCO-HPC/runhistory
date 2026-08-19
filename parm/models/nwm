@@ -208,11 +208,11 @@ tarmod          .analysis_assim_extend_no_da
 dotransfer      optional
 
 
-files           ./restart_extend/*nwm.rst*/*.nc
+files           ./restart_extend/*nwm.rst*
 tarmod          .restart_extend
 dotransfer      optional
 
-files           ./restart_extend_no_da/*nwm.rst*/*.nc
+files           ./restart_extend_no_da/*nwm.rst*
 tarmod          .restart_extend_no_da
 dotransfer      optional
 
@@ -384,4 +384,6 @@ files           ./short_range_coastal_atlgulf_psurge/*.{nc,shef}
 tarmod          .short_range_coastal_atlgulf_psurge
 dotransfer      optional
 
-
+files           ./short_range_coastal_puertorico_psurge/*.{nc,shef}
+tarmod          .short_range_coastal_puertorico_psurge
+dotransfer      optional
